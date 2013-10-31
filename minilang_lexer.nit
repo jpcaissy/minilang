@@ -44,7 +44,6 @@ redef class Object
 	private fun dfastate_36: DFAState36 do return once new DFAState36
 	private fun dfastate_37: DFAState37 do return once new DFAState37
 	private fun dfastate_38: DFAState38 do return once new DFAState38
-	private fun dfastate_39: DFAState39 do return once new DFAState39
 end
 class MyNToken
 	super NToken
@@ -107,9 +106,9 @@ class DFAState2
 	super DFAState
 	redef fun trans(char) do
 		var c = char.ascii
-		if c <= 33 then return dfastate_38
-		if c <= 34 then return null
-		return dfastate_38
+		if c <= 33 then return dfastate_2
+		if c <= 34 then return dfastate_38
+		return dfastate_2
 	end
 end
 class DFAState3
@@ -624,15 +623,6 @@ class DFAState37
 	end
 end
 class DFAState38
-	super DFAState
-	redef fun trans(char) do
-		var c = char.ascii
-		if c <= 33 then return null
-		if c <= 34 then return dfastate_39
-		return null
-	end
-end
-class DFAState39
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do

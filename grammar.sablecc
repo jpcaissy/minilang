@@ -3,7 +3,7 @@ Lexer
 int = ('0'..'9')+ ;
 blank = ' ' | #10 | #13 | #9;
 id = ('a'..'z')+;
-str = '"' (Any - '"') '"';
+str = '"' (Any - '"')* '"';
 
 Parser
 Ignored blank;

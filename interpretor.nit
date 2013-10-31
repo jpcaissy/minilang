@@ -69,6 +69,13 @@ redef class Nstmt_print
     end
 end
 
+redef class Nstmt_print_str
+    redef fun accept_interpretor(v) do
+        print n_str.text.substring(1, n_str.text.length - 2)
+    end
+end
+
+
 redef class Nstmt_assign
     redef fun accept_interpretor(v) do
         super
