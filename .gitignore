@@ -1,3 +1,6 @@
 *.swp
 interpretor
 .nit_compile/
+*.dot
+*.out
+*.txt
