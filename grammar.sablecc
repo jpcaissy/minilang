@@ -26,7 +26,6 @@ else =
     {else:} 'else' '{' stmts '}';
 
 expr = 
-    {neg:} '-' expr |
     expr_2 {->};
 
 expr_2 {->expr} = 
@@ -41,6 +40,7 @@ expr_3 {->expr} =
     expr_4 {->};
 
 expr_4 {->expr} =
+    {neg:} '-' expr |
     {par:} '(' expr ')' |
     {var:} id |
     {read:} 'read' |

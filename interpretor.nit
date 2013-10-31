@@ -22,6 +22,14 @@ redef class Nexpr_int
     end
 end
 
+redef class Nexpr_neg
+    redef fun accept_interpretor(v) do
+        super
+        v.values.push(-v.values.pop)
+    end
+end
+
+
 redef class Nexpr_add
     redef fun accept_interpretor(v) do
         super
