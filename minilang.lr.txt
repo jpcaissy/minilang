@@ -1,0 +1,1283 @@
+// LR automaton of minilang
+* LRAutomaton: 69 states
+s0 Start
+	CORE
+		_start::Start=.stmts Eof
+	OTHER ITEMS
+		stmts::stmts_0=.stmt
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+		stmts::stmts_1=.stmts stmt
+	TRANSITIONS 6
+		stmts |-> s1
+		stmt |-> s2
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' 'while' 'print' id
+s1 stmts
+	CORE
+		_start::Start= stmts.Eof
+		stmts::stmts_1= stmts.stmt
+	OTHER ITEMS
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+	TRANSITIONS 6
+		Eof |-> s7
+		stmt |-> s8
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT Eof 'if' 'while' 'print' id
+s2 stmt
+	CORE
+		stmts::stmts_0= stmt.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmts::stmts_0=stmt
+s3 'if'
+	CORE
+		stmt::stmt_if= 'if'.'(' cond ')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		'(' |-> s9
+	ACTIONS
+		STATE LR0
+		SHIFT '('
+s4 'while'
+	CORE
+		stmt::stmt_while= 'while'.'(' cond ')' '{' stmts '}'
+	OTHER ITEMS
+	TRANSITIONS 1
+		'(' |-> s10
+	ACTIONS
+		STATE LR0
+		SHIFT '('
+s5 'print'
+	CORE
+		stmt::stmt_print= 'print'.'(' expr ')' ';'
+	OTHER ITEMS
+	TRANSITIONS 1
+		'(' |-> s11
+	ACTIONS
+		STATE LR0
+		SHIFT '('
+s6 id
+	CORE
+		stmt::stmt_assign= id.'=' expr ';'
+	OTHER ITEMS
+	TRANSITIONS 1
+		'=' |-> s12
+	ACTIONS
+		STATE LR0
+		SHIFT '='
+s7 stmts Eof
+	CORE
+		_start::Start= stmts Eof.
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE _start::Start=stmts Eof
+s8 stmts stmt
+	CORE
+		stmts::stmts_1= stmts stmt.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmts::stmts_1=stmts stmt
+s9 'if' '('
+	CORE
+		stmt::stmt_if= 'if' '('.cond ')' '{' stmts '}' else
+	OTHER ITEMS
+		cond::cond_eq=.expr '=' expr
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+		cond::cond_lt=.expr '<' expr
+		cond::cond_gt=.expr '>' expr
+	TRANSITIONS 10
+		cond |-> s13
+		expr |-> s14
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s10 'while' '('
+	CORE
+		stmt::stmt_while= 'while' '('.cond ')' '{' stmts '}'
+	OTHER ITEMS
+		cond::cond_eq=.expr '=' expr
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+		cond::cond_lt=.expr '<' expr
+		cond::cond_gt=.expr '>' expr
+	TRANSITIONS 10
+		cond |-> s23
+		expr |-> s14
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s11 'print' '('
+	CORE
+		stmt::stmt_print= 'print' '('.expr ')' ';'
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s24
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s12 id '='
+	CORE
+		stmt::stmt_assign= id '='.expr ';'
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s25
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s13 'if' '(' cond
+	CORE
+		stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		')' |-> s26
+	ACTIONS
+		STATE LR0
+		SHIFT ')'
+s14 'if' '(' expr
+	CORE
+		cond::cond_eq= expr.'=' expr
+		cond::cond_lt= expr.'<' expr
+		cond::cond_gt= expr.'>' expr
+	OTHER ITEMS
+	TRANSITIONS 3
+		'=' |-> s27
+		'<' |-> s28
+		'>' |-> s29
+	ACTIONS
+		STATE LR0
+		SHIFT '=' '<' '>'
+s15 'if' '(' '-'
+	CORE
+		expr::expr_neg= '-'.expr
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s30
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s16 'if' '(' expr_2
+	CORE
+		expr::expr_1= expr_2.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+		expr_2::expr_mod= expr_2.'%' expr_3
+		expr_2::expr_mul= expr_2.'*' expr_3
+		expr_2::expr_div= expr_2.'/' expr_3
+	OTHER ITEMS
+	TRANSITIONS 3
+		'%' |-> s31
+		'*' |-> s32
+		'/' |-> s33
+	ACTIONS
+		STATE SLR
+		SHIFT '%' '*' '/'
+		REDUCE expr::expr_1=expr_2
+s17 'if' '(' expr_3
+	CORE
+		expr_2::expr_2_3= expr_3.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+		expr_3::expr_add= expr_3.'+' expr_4
+		expr_3::expr_sub= expr_3.'-' expr_4
+	OTHER ITEMS
+	TRANSITIONS 2
+		'+' |-> s34
+		'-' |-> s35
+	ACTIONS
+		STATE SLR
+		SHIFT '+' '-'
+		REDUCE expr_2::expr_2_3=expr_3
+s18 'if' '(' expr_4
+	CORE
+		expr_3::expr_3_2= expr_4.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_3::expr_3_2=expr_4
+s19 'if' '(' '('
+	CORE
+		expr_4::expr_par= '('.expr ')'
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s36
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s20 'if' '(' id
+	CORE
+		expr_4::expr_var= id.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_4::expr_var=id
+s21 'if' '(' 'read'
+	CORE
+		expr_4::expr_read= 'read'.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_4::expr_read='read'
+s22 'if' '(' int
+	CORE
+		expr_4::expr_int= int.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_4::expr_int=int
+s23 'while' '(' cond
+	CORE
+		stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+	OTHER ITEMS
+	TRANSITIONS 1
+		')' |-> s37
+	ACTIONS
+		STATE LR0
+		SHIFT ')'
+s24 'print' '(' expr
+	CORE
+		stmt::stmt_print= 'print' '(' expr.')' ';'
+	OTHER ITEMS
+	TRANSITIONS 1
+		')' |-> s38
+	ACTIONS
+		STATE LR0
+		SHIFT ')'
+s25 id '=' expr
+	CORE
+		stmt::stmt_assign= id '=' expr.';'
+	OTHER ITEMS
+	TRANSITIONS 1
+		';' |-> s39
+	ACTIONS
+		STATE LR0
+		SHIFT ';'
+s26 'if' '(' cond ')'
+	CORE
+		stmt::stmt_if= 'if' '(' cond ')'.'{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		'{' |-> s40
+	ACTIONS
+		STATE LR0
+		SHIFT '{'
+s27 'if' '(' expr '='
+	CORE
+		cond::cond_eq= expr '='.expr
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s41
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s28 'if' '(' expr '<'
+	CORE
+		cond::cond_lt= expr '<'.expr
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s42
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s29 'if' '(' expr '>'
+	CORE
+		cond::cond_gt= expr '>'.expr
+	OTHER ITEMS
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 9
+		expr |-> s43
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s30 'if' '(' '-' expr
+	CORE
+		expr::expr_neg= '-' expr.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr::expr_neg='-' expr
+s31 'if' '(' expr_2 '%'
+	CORE
+		expr_2::expr_mod= expr_2 '%'.expr_3
+	OTHER ITEMS
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 6
+		expr_3 |-> s44
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '(' id 'read' int
+s32 'if' '(' expr_2 '*'
+	CORE
+		expr_2::expr_mul= expr_2 '*'.expr_3
+	OTHER ITEMS
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 6
+		expr_3 |-> s45
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '(' id 'read' int
+s33 'if' '(' expr_2 '/'
+	CORE
+		expr_2::expr_div= expr_2 '/'.expr_3
+	OTHER ITEMS
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 6
+		expr_3 |-> s46
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '(' id 'read' int
+s34 'if' '(' expr_3 '+'
+	CORE
+		expr_3::expr_add= expr_3 '+'.expr_4
+	OTHER ITEMS
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 5
+		expr_4 |-> s47
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '(' id 'read' int
+s35 'if' '(' expr_3 '-'
+	CORE
+		expr_3::expr_sub= expr_3 '-'.expr_4
+	OTHER ITEMS
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+	TRANSITIONS 5
+		expr_4 |-> s48
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '(' id 'read' int
+s36 'if' '(' '(' expr
+	CORE
+		expr_4::expr_par= '(' expr.')'
+	OTHER ITEMS
+	TRANSITIONS 1
+		')' |-> s49
+	ACTIONS
+		STATE LR0
+		SHIFT ')'
+s37 'while' '(' cond ')'
+	CORE
+		stmt::stmt_while= 'while' '(' cond ')'.'{' stmts '}'
+	OTHER ITEMS
+	TRANSITIONS 1
+		'{' |-> s50
+	ACTIONS
+		STATE LR0
+		SHIFT '{'
+s38 'print' '(' expr ')'
+	CORE
+		stmt::stmt_print= 'print' '(' expr ')'.';'
+	OTHER ITEMS
+	TRANSITIONS 1
+		';' |-> s51
+	ACTIONS
+		STATE LR0
+		SHIFT ';'
+s39 id '=' expr ';'
+	CORE
+		stmt::stmt_assign= id '=' expr ';'.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmt::stmt_assign=id '=' expr ';'
+s40 'if' '(' cond ')' '{'
+	CORE
+		stmt::stmt_if= 'if' '(' cond ')' '{'.stmts '}' else
+	OTHER ITEMS
+		stmts::stmts_0=.stmt
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+		stmts::stmts_1=.stmts stmt
+	TRANSITIONS 6
+		stmts |-> s52
+		stmt |-> s2
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' 'while' 'print' id
+s41 'if' '(' expr '=' expr
+	CORE
+		cond::cond_eq= expr '=' expr.
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE cond::cond_eq=expr '=' expr
+s42 'if' '(' expr '<' expr
+	CORE
+		cond::cond_lt= expr '<' expr.
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE cond::cond_lt=expr '<' expr
+s43 'if' '(' expr '>' expr
+	CORE
+		cond::cond_gt= expr '>' expr.
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE cond::cond_gt=expr '>' expr
+s44 'if' '(' expr_2 '%' expr_3
+	CORE
+		expr_2::expr_mod= expr_2 '%' expr_3.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+		expr_3::expr_add= expr_3.'+' expr_4
+		expr_3::expr_sub= expr_3.'-' expr_4
+	OTHER ITEMS
+	TRANSITIONS 2
+		'+' |-> s34
+		'-' |-> s35
+	ACTIONS
+		STATE SLR
+		SHIFT '+' '-'
+		REDUCE expr_2::expr_mod=expr_2 '%' expr_3
+s45 'if' '(' expr_2 '*' expr_3
+	CORE
+		expr_2::expr_mul= expr_2 '*' expr_3.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+		expr_3::expr_add= expr_3.'+' expr_4
+		expr_3::expr_sub= expr_3.'-' expr_4
+	OTHER ITEMS
+	TRANSITIONS 2
+		'+' |-> s34
+		'-' |-> s35
+	ACTIONS
+		STATE SLR
+		SHIFT '+' '-'
+		REDUCE expr_2::expr_mul=expr_2 '*' expr_3
+s46 'if' '(' expr_2 '/' expr_3
+	CORE
+		expr_2::expr_div= expr_2 '/' expr_3.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+		expr_3::expr_add= expr_3.'+' expr_4
+		expr_3::expr_sub= expr_3.'-' expr_4
+	OTHER ITEMS
+	TRANSITIONS 2
+		'+' |-> s34
+		'-' |-> s35
+	ACTIONS
+		STATE SLR
+		SHIFT '+' '-'
+		REDUCE expr_2::expr_div=expr_2 '/' expr_3
+s47 'if' '(' expr_3 '+' expr_4
+	CORE
+		expr_3::expr_add= expr_3 '+' expr_4.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_3::expr_add=expr_3 '+' expr_4
+s48 'if' '(' expr_3 '-' expr_4
+	CORE
+		expr_3::expr_sub= expr_3 '-' expr_4.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_3::expr_sub=expr_3 '-' expr_4
+s49 'if' '(' '(' expr ')'
+	CORE
+		expr_4::expr_par= '(' expr ')'.
+			cond::cond_eq= expr.'=' expr
+			cond::cond_lt= expr.'<' expr
+			cond::cond_gt= expr.'>' expr
+			stmt::stmt_print= 'print' '(' expr.')' ';'
+			stmt::stmt_assign= id '=' expr.';'
+			expr_2::expr_mod= expr_2.'%' expr_3
+			expr_2::expr_mul= expr_2.'*' expr_3
+			expr_2::expr_div= expr_2.'/' expr_3
+			expr_3::expr_add= expr_3.'+' expr_4
+			expr_3::expr_sub= expr_3.'-' expr_4
+			expr_4::expr_par= '(' expr.')'
+			stmt::stmt_if= 'if' '(' cond.')' '{' stmts '}' else
+			stmt::stmt_while= 'while' '(' cond.')' '{' stmts '}'
+			else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE expr_4::expr_par='(' expr ')'
+s50 'while' '(' cond ')' '{'
+	CORE
+		stmt::stmt_while= 'while' '(' cond ')' '{'.stmts '}'
+	OTHER ITEMS
+		stmts::stmts_0=.stmt
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+		stmts::stmts_1=.stmts stmt
+	TRANSITIONS 6
+		stmts |-> s53
+		stmt |-> s2
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' 'while' 'print' id
+s51 'print' '(' expr ')' ';'
+	CORE
+		stmt::stmt_print= 'print' '(' expr ')' ';'.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmt::stmt_print='print' '(' expr ')' ';'
+s52 'if' '(' cond ')' '{' stmts
+	CORE
+		stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+		stmts::stmts_1= stmts.stmt
+	OTHER ITEMS
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+	TRANSITIONS 6
+		'}' |-> s54
+		stmt |-> s8
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT '}' 'if' 'while' 'print' id
+s53 'while' '(' cond ')' '{' stmts
+	CORE
+		stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+		stmts::stmts_1= stmts.stmt
+	OTHER ITEMS
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+	TRANSITIONS 6
+		'}' |-> s55
+		stmt |-> s8
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT '}' 'if' 'while' 'print' id
+s54 'if' '(' cond ')' '{' stmts '}'
+	CORE
+		stmt::stmt_if= 'if' '(' cond ')' '{' stmts '}'.else
+	OTHER ITEMS
+		else::else_none=.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+		else::else_elseif=.'else' 'if' '(' cond ')' '{' stmts '}' else
+		else::else_else=.'else' '{' stmts '}'
+	TRANSITIONS 2
+		else |-> s56
+		'else' |-> s57
+	ACTIONS
+		STATE SLR
+		SHIFT 'else'
+		REDUCE else::else_none=
+s55 'while' '(' cond ')' '{' stmts '}'
+	CORE
+		stmt::stmt_while= 'while' '(' cond ')' '{' stmts '}'.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmt::stmt_while='while' '(' cond ')' '{' stmts '}'
+s56 'if' '(' cond ')' '{' stmts '}' else
+	CORE
+		stmt::stmt_if= 'if' '(' cond ')' '{' stmts '}' else.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE stmt::stmt_if='if' '(' cond ')' '{' stmts '}' else
+s57 'if' '(' cond ')' '{' stmts '}' 'else'
+	CORE
+		else::else_elseif= 'else'.'if' '(' cond ')' '{' stmts '}' else
+		else::else_else= 'else'.'{' stmts '}'
+	OTHER ITEMS
+	TRANSITIONS 2
+		'if' |-> s58
+		'{' |-> s59
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' '{'
+s58 'if' '(' cond ')' '{' stmts '}' 'else' 'if'
+	CORE
+		else::else_elseif= 'else' 'if'.'(' cond ')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		'(' |-> s60
+	ACTIONS
+		STATE LR0
+		SHIFT '('
+s59 'if' '(' cond ')' '{' stmts '}' 'else' '{'
+	CORE
+		else::else_else= 'else' '{'.stmts '}'
+	OTHER ITEMS
+		stmts::stmts_0=.stmt
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+		stmts::stmts_1=.stmts stmt
+	TRANSITIONS 6
+		stmts |-> s61
+		stmt |-> s2
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' 'while' 'print' id
+s60 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '('
+	CORE
+		else::else_elseif= 'else' 'if' '('.cond ')' '{' stmts '}' else
+	OTHER ITEMS
+		cond::cond_eq=.expr '=' expr
+		expr::expr_neg=.'-' expr
+		expr::expr_1=.expr_2
+		expr_2::expr_mod=.expr_2 '%' expr_3
+		expr_2::expr_mul=.expr_2 '*' expr_3
+		expr_2::expr_div=.expr_2 '/' expr_3
+		expr_2::expr_2_3=.expr_3
+		expr_3::expr_add=.expr_3 '+' expr_4
+		expr_3::expr_sub=.expr_3 '-' expr_4
+		expr_3::expr_3_2=.expr_4
+		expr_4::expr_par=.'(' expr ')'
+		expr_4::expr_var=.id
+		expr_4::expr_read=.'read'
+		expr_4::expr_int=.int
+		cond::cond_lt=.expr '<' expr
+		cond::cond_gt=.expr '>' expr
+	TRANSITIONS 10
+		cond |-> s62
+		expr |-> s14
+		'-' |-> s15
+		expr_2 |-> s16
+		expr_3 |-> s17
+		expr_4 |-> s18
+		'(' |-> s19
+		id |-> s20
+		'read' |-> s21
+		int |-> s22
+	ACTIONS
+		STATE LR0
+		SHIFT '-' '(' id 'read' int
+s61 'if' '(' cond ')' '{' stmts '}' 'else' '{' stmts
+	CORE
+		else::else_else= 'else' '{' stmts.'}'
+		stmts::stmts_1= stmts.stmt
+	OTHER ITEMS
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+	TRANSITIONS 6
+		'}' |-> s63
+		stmt |-> s8
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT '}' 'if' 'while' 'print' id
+s62 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond.')' '{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		')' |-> s64
+	ACTIONS
+		STATE LR0
+		SHIFT ')'
+s63 'if' '(' cond ')' '{' stmts '}' 'else' '{' stmts '}'
+	CORE
+		else::else_else= 'else' '{' stmts '}'.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE else::else_else='else' '{' stmts '}'
+s64 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond ')'
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond ')'.'{' stmts '}' else
+	OTHER ITEMS
+	TRANSITIONS 1
+		'{' |-> s65
+	ACTIONS
+		STATE LR0
+		SHIFT '{'
+s65 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond ')' '{'
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond ')' '{'.stmts '}' else
+	OTHER ITEMS
+		stmts::stmts_0=.stmt
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+		stmts::stmts_1=.stmts stmt
+	TRANSITIONS 6
+		stmts |-> s66
+		stmt |-> s2
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT 'if' 'while' 'print' id
+s66 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond ')' '{' stmts
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+		stmts::stmts_1= stmts.stmt
+	OTHER ITEMS
+		stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+		stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+		stmt::stmt_print=.'print' '(' expr ')' ';'
+		stmt::stmt_assign=.id '=' expr ';'
+	TRANSITIONS 6
+		'}' |-> s67
+		stmt |-> s8
+		'if' |-> s3
+		'while' |-> s4
+		'print' |-> s5
+		id |-> s6
+	ACTIONS
+		STATE LR0
+		SHIFT '}' 'if' 'while' 'print' id
+s67 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond ')' '{' stmts '}'
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts '}'.else
+	OTHER ITEMS
+		else::else_none=.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+		else::else_elseif=.'else' 'if' '(' cond ')' '{' stmts '}' else
+		else::else_else=.'else' '{' stmts '}'
+	TRANSITIONS 2
+		else |-> s68
+		'else' |-> s57
+	ACTIONS
+		STATE SLR
+		SHIFT 'else'
+		REDUCE else::else_none=
+s68 'if' '(' cond ')' '{' stmts '}' 'else' 'if' '(' cond ')' '{' stmts '}' else
+	CORE
+		else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts '}' else.
+			stmt::stmt_if=.'if' '(' cond ')' '{' stmts '}' else
+			stmt::stmt_while=.'while' '(' cond ')' '{' stmts '}'
+			stmt::stmt_print=.'print' '(' expr ')' ';'
+			stmt::stmt_assign=.id '=' expr ';'
+			stmt::stmt_if= 'if' '(' cond ')' '{' stmts.'}' else
+			stmt::stmt_while= 'while' '(' cond ')' '{' stmts.'}'
+			else::else_elseif= 'else' 'if' '(' cond ')' '{' stmts.'}' else
+			else::else_else= 'else' '{' stmts.'}'
+			_start::Start= stmts.Eof
+	OTHER ITEMS
+	TRANSITIONS 0
+	ACTIONS
+		STATE LR0
+		REDUCE else::else_elseif='else' 'if' '(' cond ')' '{' stmts '}' else

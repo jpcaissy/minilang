@@ -1,0 +1,47 @@
+Grammar minilang;
+Lexer
+int = ('0'..'9')+ ;
+blank = ' ' | #10 | #13 | #9;
+id = ('a'..'z')+;
+
+Parser
+Ignored blank;
+
+stmts = stmt | stmts stmt;
+
+cond = 
+    {eq:} [left:]expr '=' [right:]expr |
+    {lt:} [left:]expr '<' [right:]expr |
+    {gt:} [left:]expr '>' [right:]expr;
+
+stmt = 
+    {if:} 'if' '(' cond ')' '{' stmts '}' else |
+    {while:} 'while' '(' cond ')' '{' stmts '}' |
+    {print:} 'print' '(' expr ')' ';' |
+    {assign:} [left:]id '=' [right:]expr ';';
+
+else =
+    {none:} |
+    {elseif:} 'else' 'if' '(' cond ')' '{' stmts '}' else |
+    {else:} 'else' '{' stmts '}';
+
+expr = 
+    {neg:} '-' expr |
+    expr_2 {->};
+
+expr_2 {->expr} = 
+    {mod:} [left:]expr_2 '%' [right:]expr_3 |
+    {mul:} [left:]expr_2 '*' [right:]expr_3 |
+    {div:} [left:]expr_2 '/' [right:]expr_3 |
+    expr_3 {->};
+
+expr_3 {->expr} =
+    {add:} [left:]expr_3 '+' [right:]expr_4 |
+    {sub:} [left:]expr_3 '-' [right:]expr_4 |
+    expr_4 {->};
+
+expr_4 {->expr} =
+    {par:} '(' expr ')' |
+    {var:} id |
+    {read:} 'read' |
+    {int:} int;
