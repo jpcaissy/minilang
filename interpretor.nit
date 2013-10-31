@@ -150,6 +150,18 @@ redef class Nstmt_if
     end
 end
 
+redef class Nelse_elseif
+    redef fun accept_interpretor(v) do
+        v.enter_visit(n_cond)
+        if v.conditions.pop then
+            v.enter_visit(n_stmts)
+        else
+            v.enter_visit(n_else)
+        end
+    end
+end
+
+
 var t = new TestParser_minilang
 var n = t.main
 var v = new Interpretor
