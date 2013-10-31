@@ -1,5 +1,5 @@
 *.swp
-interpretor
+interpreter
 .nit_compile/
 *.dot
 *.out
