@@ -3,6 +3,7 @@ Lexer
 int = ('0'..'9')+ ;
 blank = ' ' | #10 | #13 | #9;
 id = ('a'..'z')+;
+str = '"' (Any - '"') '"';
 
 Parser
 Ignored blank;
@@ -18,6 +19,7 @@ stmt =
     {if:} 'if' '(' cond ')' '{' stmts '}' else |
     {while:} 'while' '(' cond ')' '{' stmts '}' |
     {print:} 'print' '(' expr ')' ';' |
+    {print_str} 'print' '(' str ')' ';' |
     {assign:} [left:]id '=' [right:]expr ';';
 
 else =
@@ -40,8 +42,8 @@ expr_3 {->expr} =
     expr_4 {->};
 
 expr_4 {->expr} =
-    {neg:} '-' expr |
-    {par:} '(' expr ')' |
+    {neg:} '-' expr_4 |
+    {par:} '(' expr_4 ')' |
     {var:} id |
     {read:} 'read' |
     {int:} int;
