@@ -96,6 +96,31 @@ redef class Ncond_eq
     end
 end
 
+redef class Ncond_ne
+    redef fun accept_interpretor(v) do
+        super
+        v.conditions.push(v.values.pop != v.values.pop)
+    end
+end
+
+redef class Ncond_gte
+    redef fun accept_interpretor(v) do
+        super
+        var right = v.values.pop
+        var left = v.values.pop
+        v.conditions.push(left >= right)
+    end
+end
+
+redef class Ncond_lte
+    redef fun accept_interpretor(v) do
+        super
+        var right = v.values.pop
+        var left = v.values.pop
+        v.conditions.push(left <= right)
+    end
+end
+
 redef class Ncond_gt
     redef fun accept_interpretor(v) do
         super
@@ -104,7 +129,6 @@ redef class Ncond_gt
         v.conditions.push(left > right)
     end
 end
-
 
 redef class Ncond_lt
     redef fun accept_interpretor(v) do
@@ -115,14 +139,12 @@ redef class Ncond_lt
     end
 end
 
-
 redef class Nstmt_if
     redef fun accept_interpretor(v) do
         v.enter_visit(n_cond)
         if v.conditions.pop then v.enter_visit(n_stmts)
     end
 end
-
 
 var t = new TestParser_minilang
 var n = t.main

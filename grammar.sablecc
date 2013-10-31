@@ -12,6 +12,9 @@ stmts = stmt | stmts stmt;
 
 cond = 
     {eq:} [left:]expr '=' [right:]expr |
+    {ne:} [left:]expr '!=' [right:]expr |
+    {lte:} [left:]expr '<=' [right:]expr |
+    {gte:} [left:]expr '>=' [right:]expr |
     {lt:} [left:]expr '<' [right:]expr |
     {gt:} [left:]expr '>' [right:]expr;
 
