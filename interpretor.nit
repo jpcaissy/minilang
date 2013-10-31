@@ -142,7 +142,11 @@ end
 redef class Nstmt_if
     redef fun accept_interpretor(v) do
         v.enter_visit(n_cond)
-        if v.conditions.pop then v.enter_visit(n_stmts)
+        if v.conditions.pop then
+            v.enter_visit(n_stmts)
+        else
+            v.enter_visit(n_else)
+        end
     end
 end
 
