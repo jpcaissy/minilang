@@ -161,6 +161,16 @@ redef class Nelse_elseif
     end
 end
 
+redef class Nstmt_while
+    redef fun accept_interpretor(v) do
+        v.enter_visit(n_cond)
+        while v.conditions.pop do
+            v.enter_visit(n_stmts)
+            v.enter_visit(n_cond)
+        end
+    end
+end
+
 
 var t = new TestParser_minilang
 var n = t.main
