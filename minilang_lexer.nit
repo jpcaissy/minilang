@@ -50,6 +50,7 @@ redef class Object
 	private fun dfastate_42: DFAState42 do return once new DFAState42
 	private fun dfastate_43: DFAState43 do return once new DFAState43
 	private fun dfastate_44: DFAState44 do return once new DFAState44
+	private fun dfastate_45: DFAState45 do return once new DFAState45
 end
 class MyNToken
 	super NToken
@@ -113,7 +114,7 @@ class DFAState2
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 60 then return null
-		if c <= 61 then return dfastate_44
+		if c <= 61 then return dfastate_45
 		return null
 	end
 end
@@ -122,7 +123,7 @@ class DFAState3
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 33 then return dfastate_3
-		if c <= 34 then return dfastate_43
+		if c <= 34 then return dfastate_44
 		return dfastate_3
 	end
 end
@@ -234,7 +235,7 @@ class DFAState13
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 60 then return null
-		if c <= 61 then return dfastate_42
+		if c <= 61 then return dfastate_43
 		return null
 	end
 end
@@ -246,6 +247,12 @@ class DFAState14
 		t.position = position
 		t.text = text
 		return t
+	end
+	redef fun trans(char) do
+		var c = char.ascii
+		if c <= 60 then return null
+		if c <= 61 then return dfastate_42
+		return null
 	end
 end
 class DFAState15
@@ -699,7 +706,7 @@ class DFAState42
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
-		var t = new N_39d_60d_61d_39d
+		var t = new N_39d_61d_61d_39d
 		t.position = position
 		t.text = text
 		return t
@@ -709,13 +716,23 @@ class DFAState43
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
-		var t = new Nstr
+		var t = new N_39d_60d_61d_39d
 		t.position = position
 		t.text = text
 		return t
 	end
 end
 class DFAState44
+	super DFAState
+	redef fun is_accept do return true
+	redef fun make_token(position, text) do
+		var t = new Nstr
+		t.position = position
+		t.text = text
+		return t
+	end
+end
+class DFAState45
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do

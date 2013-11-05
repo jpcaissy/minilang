@@ -11,7 +11,7 @@ Ignored blank;
 stmts = stmt | stmts stmt;
 
 cond = 
-    {eq:} [left:]expr '=' [right:]expr |
+    {eq:} [left:]expr '==' [right:]expr |
     {ne:} [left:]expr '!=' [right:]expr |
     {lte:} [left:]expr '<=' [right:]expr |
     {gte:} [left:]expr '>=' [right:]expr |
