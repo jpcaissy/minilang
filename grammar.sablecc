@@ -22,8 +22,9 @@ stmt =
     {if:} 'if' '(' cond ')' '{' stmts '}' else |
     {while:} 'while' '(' cond ')' '{' stmts '}' |
     {print:} 'print' '(' expr ')' ';' |
-    {print_str} 'print' '(' str ')' ';' |
-    {assign:} [left:]id '=' [right:]expr ';';
+    {print_str:} 'print' '(' str ')' ';' |
+    {assign:} [left:]id '=' [right:]expr ';' |
+    {decl:} 'int' id ';' ;
 
 else =
     {none:} |
@@ -48,5 +49,5 @@ expr_4 {->expr} =
     {neg:} '-' expr_4 |
     {par:} '(' expr_4 ')' |
     {var:} id |
-    {read:} 'read' |
+    {read:} 'read' '(' ')' |
     {int:} int;

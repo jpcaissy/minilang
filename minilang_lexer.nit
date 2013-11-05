@@ -48,6 +48,8 @@ redef class Object
 	private fun dfastate_40: DFAState40 do return once new DFAState40
 	private fun dfastate_41: DFAState41 do return once new DFAState41
 	private fun dfastate_42: DFAState42 do return once new DFAState42
+	private fun dfastate_43: DFAState43 do return once new DFAState43
+	private fun dfastate_44: DFAState44 do return once new DFAState44
 end
 class MyNToken
 	super NToken
@@ -111,7 +113,7 @@ class DFAState2
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 60 then return null
-		if c <= 61 then return dfastate_42
+		if c <= 61 then return dfastate_44
 		return null
 	end
 end
@@ -120,7 +122,7 @@ class DFAState3
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 33 then return dfastate_3
-		if c <= 34 then return dfastate_41
+		if c <= 34 then return dfastate_43
 		return dfastate_3
 	end
 end
@@ -232,7 +234,7 @@ class DFAState13
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 60 then return null
-		if c <= 61 then return dfastate_40
+		if c <= 61 then return dfastate_42
 		return null
 	end
 end
@@ -258,7 +260,7 @@ class DFAState15
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 60 then return null
-		if c <= 61 then return dfastate_39
+		if c <= 61 then return dfastate_41
 		return null
 	end
 end
@@ -291,7 +293,7 @@ class DFAState17
 		var c = char.ascii
 		if c <= 96 then return null
 		if c <= 107 then return dfastate_16
-		if c <= 108 then return dfastate_36
+		if c <= 108 then return dfastate_38
 		if c <= 122 then return dfastate_16
 		return null
 	end
@@ -310,6 +312,8 @@ class DFAState18
 		if c <= 96 then return null
 		if c <= 101 then return dfastate_16
 		if c <= 102 then return dfastate_35
+		if c <= 109 then return dfastate_16
+		if c <= 110 then return dfastate_36
 		if c <= 122 then return dfastate_16
 		return null
 	end
@@ -607,13 +611,47 @@ class DFAState36
 	redef fun trans(char) do
 		var c = char.ascii
 		if c <= 96 then return null
-		if c <= 114 then return dfastate_16
-		if c <= 115 then return dfastate_37
+		if c <= 115 then return dfastate_16
+		if c <= 116 then return dfastate_37
 		if c <= 122 then return dfastate_16
 		return null
 	end
 end
 class DFAState37
+	super DFAState
+	redef fun is_accept do return true
+	redef fun make_token(position, text) do
+		var t = new N_39dint_39d
+		t.position = position
+		t.text = text
+		return t
+	end
+	redef fun trans(char) do
+		var c = char.ascii
+		if c <= 96 then return null
+		if c <= 122 then return dfastate_16
+		return null
+	end
+end
+class DFAState38
+	super DFAState
+	redef fun is_accept do return true
+	redef fun make_token(position, text) do
+		var t = new Nid
+		t.position = position
+		t.text = text
+		return t
+	end
+	redef fun trans(char) do
+		var c = char.ascii
+		if c <= 96 then return null
+		if c <= 114 then return dfastate_16
+		if c <= 115 then return dfastate_39
+		if c <= 122 then return dfastate_16
+		return null
+	end
+end
+class DFAState39
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
@@ -626,12 +664,12 @@ class DFAState37
 		var c = char.ascii
 		if c <= 96 then return null
 		if c <= 100 then return dfastate_16
-		if c <= 101 then return dfastate_38
+		if c <= 101 then return dfastate_40
 		if c <= 122 then return dfastate_16
 		return null
 	end
 end
-class DFAState38
+class DFAState40
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
@@ -647,7 +685,7 @@ class DFAState38
 		return null
 	end
 end
-class DFAState39
+class DFAState41
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
@@ -657,7 +695,7 @@ class DFAState39
 		return t
 	end
 end
-class DFAState40
+class DFAState42
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
@@ -667,7 +705,7 @@ class DFAState40
 		return t
 	end
 end
-class DFAState41
+class DFAState43
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do
@@ -677,7 +715,7 @@ class DFAState41
 		return t
 	end
 end
-class DFAState42
+class DFAState44
 	super DFAState
 	redef fun is_accept do return true
 	redef fun make_token(position, text) do

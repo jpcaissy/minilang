@@ -1,6 +1,7 @@
 module interpreter
 
 import minilang_test_parser
+import literal_analysis
 
 class Interpreter
     super Visitor
@@ -18,8 +19,13 @@ end
 
 redef class Nexpr_int
     redef fun accept_interpreter(v) do
-        var text = n_int.text
-        v.values.push(n_int.text.to_i)
+        v.values.push(value.as(not null))
+    end
+end
+
+redef class Nexpr_read
+    redef fun accept_interpreter(v) do
+        v.values.push(stdin.read_line.to_i)
     end
 end
 
@@ -172,8 +178,3 @@ redef class Nstmt_while
     end
 end
 
-
-var t = new TestParser_minilang
-var n = t.main
-var v = new Interpreter
-v.enter_visit(n)
