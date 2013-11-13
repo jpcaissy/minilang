@@ -4,7 +4,10 @@ import minilang_test_parser
 import literal_analysis
 
 class Variable
-	var value: Int
+	var value: nullable Int
+	init do
+		value = null
+	end
 end
 
 class Scope
@@ -107,14 +110,22 @@ end
 redef class Nstmt_assign
 	redef fun accept_interpreter(v) do
 		super
-		v.scopes.first.variables[n_left.text] = new Variable(v.values.pop)
+		v.scopes.first.variables[n_left.text].value = v.values.pop
 	end
 end
+
+redef class Nstmt_decl
+	redef fun accept_interpreter(v) do
+		super
+		v.scopes.first.variables[n_id.text] = new Variable
+	end
+end
+
 
 redef class Nexpr_var
 	redef fun accept_interpreter(v) do
 		super
-		v.values.push(v.scopes.first.variables[n_id.text].value)
+		v.values.push(v.scopes.first.variables[n_id.text].value.as(not null))
 	end
 end
 
@@ -171,32 +182,45 @@ end
 redef class Nstmt_if
 	redef fun accept_interpreter(v) do
 		v.enter_visit(n_cond)
+
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+
 		if v.conditions.pop then
 			v.enter_visit(n_stmts)
 		else
 			v.enter_visit(n_else)
 		end
+
+		v.scopes.shift
 	end
 end
 
 redef class Nelse_elseif
 	redef fun accept_interpreter(v) do
 		v.enter_visit(n_cond)
+
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+
 		if v.conditions.pop then
 			v.enter_visit(n_stmts)
 		else
 			v.enter_visit(n_else)
 		end
+
+		v.scopes.shift
 	end
 end
 
 redef class Nstmt_while
 	redef fun accept_interpreter(v) do
 		v.enter_visit(n_cond)
+
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
 		while v.conditions.pop do
 			v.enter_visit(n_stmts)
 			v.enter_visit(n_cond)
 		end
+		v.scopes.shift
 	end
 end
 
