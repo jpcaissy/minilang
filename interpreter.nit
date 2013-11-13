@@ -3,18 +3,40 @@ module interpreter
 import minilang_test_parser
 import literal_analysis
 
+class Variable
+	var value: Int
+end
+
+class Scope
+	var variables = new ArrayMap[String, Variable]
+
+	init do
+	end
+
+	init inherit(s: Scope) do
+		for key,value in s.variables do
+			variables[key] = value
+		end
+	end
+
+
+end
+
 class Interpreter
 	super Visitor
 
+	var scopes = new Array[Scope]
 	var values = new Array[Int]
 	var conditions = new Array[Bool]
-	var variables = new ArrayMap[String, Int]
 
 	redef fun visit(n) do n.accept_interpreter(self)
 end
 
 redef class Node
-	fun accept_interpreter(v: Interpreter) do visit_children(v)
+	fun accept_interpreter(v: Interpreter) do
+		v.scopes.push(new Scope)
+		visit_children(v)
+	end
 end
 
 redef class Nexpr_int
@@ -85,14 +107,14 @@ end
 redef class Nstmt_assign
 	redef fun accept_interpreter(v) do
 		super
-		v.variables[n_left.text] = v.values.pop
+		v.scopes.first.variables[n_left.text] = new Variable(v.values.pop)
 	end
 end
 
 redef class Nexpr_var
 	redef fun accept_interpreter(v) do
 		super
-		v.values.push(v.variables[n_id.text])
+		v.values.push(v.scopes.first.variables[n_id.text].value)
 	end
 end
 

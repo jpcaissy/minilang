@@ -34,6 +34,30 @@ redef class Nstmt_if
 	end
 end
 
+redef class Nstmt_while
+	redef fun accept_scope(v: ScopeAnalysis) do
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+		v.enter_visit(n_stmts)
+		v.scopes.shift
+	end
+end
+
+redef class Nelse_else
+	redef fun accept_scope(v: ScopeAnalysis) do
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+		v.enter_visit(n_stmts)
+		v.scopes.shift
+	end
+end
+
+redef class Nelse_elseif
+	redef fun accept_scope(v: ScopeAnalysis) do
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+		v.enter_visit(n_stmts)
+		v.scopes.shift
+	end
+end
+
 redef class Node
 	fun accept_scope(v: ScopeAnalysis) do 
 		v.scopes.push(new Scope)
