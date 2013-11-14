@@ -3,10 +3,7 @@ module scope_analysis
 import minilang_test_parser
 
 class Variable
-	var value: nullable Int
-	init do
-		value = null
-	end
+	var assigned = false
 end
 
 class Scope
@@ -101,7 +98,7 @@ redef class Nexpr_var
 			exit(1)
 		end
 
-		if v.scopes.first.variables[n_id.text].value == null then
+		if not v.scopes.first.variables[n_id.text].assigned then
 			print "Unassigned variable"
 			exit(1)
 		end
@@ -110,7 +107,6 @@ end
 
 redef class Nstmt_assign
 	redef fun accept_scope(v) do
-		#no need to assign, just mark the variable as not null
-		v.scopes.first.variables[n_left.text].value = 0
+		v.scopes.first.variables[n_left.text].assigned = true
 	end
 end
