@@ -9,7 +9,7 @@ class Compiler
 	var writer : OStream
 	var level = 0
 	init do
-		writer = new OFStream.open("/dev/stdout")
+		writer = new OFStream.open("test.py")
 	end
 	redef fun visit(n) do n.accept_compiler(self)
 end
@@ -34,11 +34,8 @@ redef class Nstmt_print
 	redef fun accept_compiler(v) do
 		indent(v)
 		v.writer.write("print(")
-
 		visit_children(v)
-
 		v.writer.write(")")
-		
 		v.writer.write("\n")
 	end
 end
@@ -163,7 +160,12 @@ redef class Nstmt_if
 		v.enter_visit(n_cond)
 		v.writer.write(":\n")
 		v.level += 1
-		v.enter_visit(n_stmts)
+		if n_stmts.number_of_children == 0 then
+			indent(v)
+			v.writer.write("pass\n")
+		else
+			v.enter_visit(n_stmts)
+		end
 		v.level -= 1
 		v.enter_visit(n_else)
 	end
@@ -213,7 +215,7 @@ end
 redef class Nstmt_assign
 	redef fun accept_compiler(v) do
 		indent(v)
-		v.writer.write("{n_left.text} = ")
+		v.writer.write("var_{n_left.text} = ")
 		v.enter_visit(n_right)
 		v.writer.write("\n")
 	end
@@ -229,16 +231,19 @@ end
 
 redef class Nparam
 	redef fun accept_compiler(v) do
-		v.writer.write(n_id.text)
+		v.writer.write("var_{n_id.text}")
 	end
 end
 
 redef class Ndef
 	redef fun accept_compiler(v) do
 		indent(v)
-		v.writer.write("def {n_id.text}(")
+		v.writer.write("def fun_{n_id.text}(")
 		if n_params != null then
 			v.enter_visit(n_params.as(not null))
+		else
+			indent(v)
+			v.writer.write("pass")
 		end
 		v.writer.write("):\n")
 		v.level += 1
@@ -249,7 +254,7 @@ end
 
 redef class Nexpr_var
 	redef fun accept_compiler(v) do
-		v.writer.write(n_id.text)
+		v.writer.write("var_{n_id.text}")
 	end
 end
 
@@ -263,7 +268,7 @@ end
 redef class Nstmt_call
 	redef fun accept_compiler(v) do
 		indent(v)
-		v.writer.write("{n_id.text}(")
+		v.writer.write("fun_{n_id.text}(")
 		if n_arguments != null then
 			v.enter_visit(n_arguments.as(not null))
 		end
