@@ -8,7 +8,7 @@ str = '"' (Any - '"')* '"';
 Parser
 Ignored blank;
 
-prog = defs stmts;
+prog = defs? stmts;
 
 def = 'def' id '(' params? ')' '{' stmts '}' ;
 defs = def | defs def;
@@ -33,7 +33,7 @@ stmt =
 	{assign:} [left:]id '=' [right:]expr ';' |
 	{decl:} 'int' id ';' |
 	{call} id '(' arguments? ')' ';' |
-	{return} 'return' ';' ;
+	{return} 'return' id? ';' ;
 
 arguments = arguments ',' expr | expr ;
 

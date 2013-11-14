@@ -41,19 +41,25 @@ class Interpreter
 	var values = new Array[Int]
 	var conditions = new Array[Bool]
 	var params = new Array[String]
+	var has_return = false
 
 	redef fun visit(n) do n.accept_interpreter(self)
+
+	init do
+		scopes.push(new Scope)
+	end
 end
 
 redef class Node
 	fun accept_interpreter(v: Interpreter) do
-		v.scopes.push(new Scope)
 		visit_children(v)
 	end
 end
 
 redef class Ndef
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
+
 		v.scopes.first.methods[n_id.text] = new Method(self, new Array[String])
 		if n_params != null then
 			v.enter_visit(n_params.as(not null))
@@ -66,6 +72,7 @@ end
 
 redef class Nparam
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.params.push(n_id.text)
 	end
 end
@@ -73,6 +80,8 @@ end
 
 redef class Nstmt_call
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
+
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
 
 		if n_arguments != null then
@@ -87,23 +96,33 @@ redef class Nstmt_call
 		v.scopes.first.methods[n_id.text].node.visit_children(v)
 
 		v.scopes.shift
+		v.has_return = false
+	end
+end
+
+redef class Nstmt_return
+	redef fun accept_interpreter(v) do
+		v.has_return = true
 	end
 end
 
 redef class Nexpr_int
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.values.push(value.as(not null))
 	end
 end
 
 redef class Nexpr_read
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.values.push(stdin.read_line.to_i)
 	end
 end
 
 redef class Nexpr_neg
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.values.push(-v.values.pop)
 	end
@@ -112,6 +131,7 @@ end
 
 redef class Nexpr_add
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.values.push(v.values.pop + v.values.pop)
 	end
@@ -119,6 +139,7 @@ end
 
 redef class Nexpr_mul
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.values.push(v.values.pop * v.values.pop)
 	end
@@ -126,6 +147,7 @@ end
 
 redef class Nexpr_sub
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -135,6 +157,7 @@ end
 
 redef class Nexpr_div
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -144,6 +167,7 @@ end
 
 redef class Nstmt_print
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		print v.values.pop
 	end
@@ -151,12 +175,14 @@ end
 
 redef class Nstmt_print_str
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		print n_str.text.substring(1, n_str.text.length - 2)
 	end
 end
 
 redef class Nstmt_assign
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.scopes.first.variables[n_left.text].value = v.values.pop
 	end
@@ -164,6 +190,7 @@ end
 
 redef class Nstmt_decl
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.scopes.first.variables[n_id.text] = new Variable
 	end
@@ -172,6 +199,7 @@ end
 
 redef class Nexpr_var
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.values.push(v.scopes.first.variables[n_id.text].value.as(not null))
 	end
@@ -179,6 +207,7 @@ end
 
 redef class Ncond_eq
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.conditions.push(v.values.pop == v.values.pop)
 	end
@@ -186,6 +215,7 @@ end
 
 redef class Ncond_ne
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		v.conditions.push(v.values.pop != v.values.pop)
 	end
@@ -193,6 +223,7 @@ end
 
 redef class Ncond_gte
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -202,6 +233,7 @@ end
 
 redef class Ncond_lte
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -211,6 +243,7 @@ end
 
 redef class Ncond_gt
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -220,6 +253,7 @@ end
 
 redef class Ncond_lt
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		super
 		var right = v.values.pop
 		var left = v.values.pop
@@ -229,6 +263,7 @@ end
 
 redef class Nstmt_if
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.enter_visit(n_cond)
 
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
@@ -245,6 +280,7 @@ end
 
 redef class Nelse_elseif
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.enter_visit(n_cond)
 
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
@@ -261,6 +297,7 @@ end
 
 redef class Nstmt_while
 	redef fun accept_interpreter(v) do
+		if v.has_return then return
 		v.enter_visit(n_cond)
 
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
