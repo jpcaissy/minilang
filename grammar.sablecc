@@ -12,7 +12,9 @@ prog = defs? stmts;
 
 def = 'def' id '(' params? ')' '{' stmts '}' ;
 defs = def | defs def;
-params = params ',' param | param ;
+params = 
+	{multiple:} params ',' param |
+	{single:} param ;
 param = 'int' id ;
 
 stmts = stmt | stmts stmt;
@@ -35,7 +37,9 @@ stmt =
 	{call} id '(' arguments? ')' ';' |
 	{return} 'return' expr? ';' ;
 
-arguments = arguments ',' expr | expr ;
+arguments = 
+	{multiple:} arguments ',' expr |
+	{single:} expr ;
 
 else =
 	{none:} |

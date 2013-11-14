@@ -1959,9 +1959,9 @@ class Nparams
 	super NProd
 	redef fun node_name do return "params"
 end
-class Nparams_95d0
+class Nparams_multiple
 	super Nparams
-	redef fun node_name do return "params_0"
+	redef fun node_name do return "params_multiple"
 	var n_params: Nparams
 	var n_1: N_39d_44d_39d
 	var n_param: Nparam
@@ -1978,9 +1978,9 @@ class Nparams_95d0
 		abort
 	end
 end
-class Nparams_95d1
+class Nparams_single
 	super Nparams
-	redef fun node_name do return "params_1"
+	redef fun node_name do return "params_single"
 	var n_param: Nparam
 	init(n_param: Nparam) do
 		self.n_param = n_param
@@ -2366,9 +2366,9 @@ class Narguments
 	super NProd
 	redef fun node_name do return "arguments"
 end
-class Narguments_95d0
+class Narguments_multiple
 	super Narguments
-	redef fun node_name do return "arguments_0"
+	redef fun node_name do return "arguments_multiple"
 	var n_arguments: Narguments
 	var n_1: N_39d_44d_39d
 	var n_expr: Nexpr
@@ -2385,9 +2385,9 @@ class Narguments_95d0
 		abort
 	end
 end
-class Narguments_95d1
+class Narguments_single
 	super Narguments
-	redef fun node_name do return "arguments_1"
+	redef fun node_name do return "arguments_single"
 	var n_expr: Nexpr
 	init(n_expr: Nexpr) do
 		self.n_expr = n_expr
@@ -3149,9 +3149,9 @@ private class LRStateid_32d_39d_40d_39d_32dexpr
 	redef fun to_s do return "id \'(\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE arguments::arguments_1=expr
+		# REDUCE arguments::arguments_single=expr
 		var n0 = parser.pop.as(Nexpr)
-		var p1 = new Narguments_95d1(n0)
+		var p1 = new Narguments_single(n0)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Narguments)
@@ -3306,9 +3306,9 @@ private class LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparam
 	redef fun to_s do return "\'def\' id \'(\' param"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE params::params_1=param
+		# REDUCE params::params_single=param
 		var n0 = parser.pop.as(Nparam)
-		var p1 = new Nparams_95d1(n0)
+		var p1 = new Nparams_single(n0)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Nparams)
@@ -3805,11 +3805,11 @@ private class LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr
 	redef fun to_s do return "id \'(\' arguments \',\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE arguments::arguments_0=arguments ',' expr
+		# REDUCE arguments::arguments_multiple=arguments ',' expr
 		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_44d_39d)
 		var n0 = parser.pop.as(Narguments)
-		var p1 = new Narguments_95d0(n0, n1, n2)
+		var p1 = new Narguments_multiple(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Narguments)
@@ -3833,11 +3833,11 @@ private class LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_44d_39d
 	redef fun to_s do return "\'def\' id \'(\' params \',\' param"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE params::params_0=params ',' param
+		# REDUCE params::params_multiple=params ',' param
 		var n2 = parser.pop.as(Nparam)
 		var n1 = parser.pop.as(N_39d_44d_39d)
 		var n0 = parser.pop.as(Nparams)
-		var p1 = new Nparams_95d0(n0, n1, n2)
+		var p1 = new Nparams_multiple(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Nparams)
