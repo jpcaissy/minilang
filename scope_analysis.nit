@@ -46,19 +46,21 @@ end
 redef class Nstmt_def
 	redef fun accept_scope(v: ScopeAnalysis) do
 		var new_scope = new Scope.inherit(v.scopes.first)
+		v.scopes.insert(new_scope, 0)
 
 		if n_params != null then
 			v.enter_visit(n_params.as(not null))
 		end
 
-		v.scopes.insert(new_scope, 0)
 		v.enter_visit(n_stmts)
 		v.scopes.shift
 	end
 end
 
-redef class Nparams
+redef class Nparam
 	redef fun accept_scope(v: ScopeAnalysis) do
+		v.scopes.first.variables[n_id.text] = new Variable
+		v.scopes.first.variables[n_id.text].assigned = true
 	end
 end
 
