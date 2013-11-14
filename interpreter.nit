@@ -3,6 +3,11 @@ module interpreter
 import minilang_test_parser
 import literal_analysis
 
+class Method
+	var node: Node
+	var params: Array[String]
+end
+
 class Variable
 	var value: nullable Int
 	init do
@@ -12,7 +17,7 @@ end
 
 class Scope
 	var variables = new ArrayMap[String, Variable]
-	var methods = new ArrayMap[String, Node]
+	var methods = new ArrayMap[String, Method]
 
 	init do
 	end
@@ -35,6 +40,7 @@ class Interpreter
 	var scopes = new Array[Scope]
 	var values = new Array[Int]
 	var conditions = new Array[Bool]
+	var params = new Array[String]
 
 	redef fun visit(n) do n.accept_interpreter(self)
 end
@@ -48,13 +54,41 @@ end
 
 redef class Nstmt_def
 	redef fun accept_interpreter(v) do
-		v.scopes.first.methods[n_id.text] = self
+		v.scopes.first.methods[n_id.text] = new Method(self, new Array[String])
+		if n_params != null then
+			v.enter_visit(n_params.as(not null))
+		end
+		while not v.params.is_empty do
+			v.scopes.first.methods[n_id.text].params.push(v.params.pop)
+		end
 	end
 end
 
+redef class Nparam
+	redef fun accept_interpreter(v) do
+		v.params.push(n_id.text)
+	end
+end
+
+
 redef class Nstmt_call
 	redef fun accept_interpreter(v) do
-		v.scopes.first.methods[n_id.text].visit_children(v)
+		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
+
+		if n_arguments != null then
+			v.enter_visit(n_arguments.as(not null))
+		end
+
+		for param in v.scopes.first.methods[n_id.text].params do
+			if not v.scopes.first.variables.has_key(param) then
+				v.scopes.first.variables[param] = new Variable
+			end
+			v.scopes.first.variables[param].value = v.values.pop
+		end
+
+		v.scopes.first.methods[n_id.text].node.visit_children(v)
+
+		v.scopes.shift
 	end
 end
 
