@@ -26,7 +26,8 @@ stmt =
 	{assign:} [left:]id '=' [right:]expr ';' |
 	{decl:} 'int' id ';' |
 	{call} id '(' arguments? ')' ';' |
-	{def} 'def' id '(' params? ')' '{' stmts '}' ;
+	{def} 'def' id '(' params? ')' '{' stmts '}' |
+	{return} 'return' ';' ;
 
 params = params ',' param | param ;
 param = 'int' id ;
