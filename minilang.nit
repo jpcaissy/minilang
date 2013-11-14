@@ -1,7 +1,7 @@
 module minilang
 
 import literal_analysis
-import interpreter
+import compiler
 import minilang_test_parser
 import scope_analysis
 import semantic_analysis
@@ -17,6 +17,6 @@ scope.enter_visit(n)
 print "*** Semantic analysis ***"
 var semantic = new SemanticAnalysis
 semantic.enter_visit(n)
-print "*** Launching interpreter ***"
-var interpreter = new Interpreter
-interpreter.enter_visit(n)
+print "*** Compiling code ***"
+var compiler = new Compiler
+compiler.enter_visit(n)

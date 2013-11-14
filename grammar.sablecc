@@ -58,7 +58,7 @@ expr_3 {->expr} =
 
 expr_4 {->expr} =
 	{neg:} '-' expr_4 |
-	{par:} '(' expr_4 ')' |
+	{par:} '(' expr ')' |
 	{var:} id |
 	{read:} 'read' '(' ')' |
 	{int:} int;
