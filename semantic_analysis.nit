@@ -15,7 +15,7 @@ redef class Node
 end
 
 
-redef class Nstmt_def
+redef class Ndef
 	redef fun accept_semantic(v) do
 		if v.methods.has_key(n_id.text) then
 			print "Cannot redeclared method"

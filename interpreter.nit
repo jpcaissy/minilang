@@ -52,7 +52,7 @@ redef class Node
 	end
 end
 
-redef class Nstmt_def
+redef class Ndef
 	redef fun accept_interpreter(v) do
 		v.scopes.first.methods[n_id.text] = new Method(self, new Array[String])
 		if n_params != null then

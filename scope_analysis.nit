@@ -43,7 +43,7 @@ redef class Nstmt_if
 	end
 end
 
-redef class Nstmt_def
+redef class Ndef
 	redef fun accept_scope(v: ScopeAnalysis) do
 		var new_scope = new Scope.inherit(v.scopes.first)
 		v.scopes.insert(new_scope, 0)

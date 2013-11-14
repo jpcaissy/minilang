@@ -8,6 +8,13 @@ str = '"' (Any - '"')* '"';
 Parser
 Ignored blank;
 
+prog = defs stmts;
+
+def = 'def' id '(' params? ')' '{' stmts '}' ;
+defs = def | defs def;
+params = params ',' param | param ;
+param = 'int' id ;
+
 stmts = stmt | stmts stmt;
 
 cond = 
@@ -26,11 +33,7 @@ stmt =
 	{assign:} [left:]id '=' [right:]expr ';' |
 	{decl:} 'int' id ';' |
 	{call} id '(' arguments? ')' ';' |
-	{def} 'def' id '(' params? ')' '{' stmts '}' |
 	{return} 'return' ';' ;
-
-params = params ',' param | param ;
-param = 'int' id ;
 
 arguments = arguments ',' expr | expr ;
 
