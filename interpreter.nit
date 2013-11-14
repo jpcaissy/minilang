@@ -80,9 +80,7 @@ redef class Nstmt_call
 		end
 
 		for param in v.scopes.first.methods[n_id.text].params do
-			if not v.scopes.first.variables.has_key(param) then
-				v.scopes.first.variables[param] = new Variable
-			end
+			v.scopes.first.variables[param] = new Variable
 			v.scopes.first.variables[param].value = v.values.pop
 		end
 
