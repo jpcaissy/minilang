@@ -33,7 +33,7 @@ stmt =
 	{assign:} [left:]id '=' [right:]expr ';' |
 	{decl:} 'int' id ';' |
 	{call} id '(' arguments? ')' ';' |
-	{return} 'return' id? ';' ;
+	{return} 'return' expr? ';' ;
 
 arguments = arguments ',' expr | expr ;
 
