@@ -2,16 +2,28 @@ module scope_analysis
 
 import minilang_test_parser
 
+class Variable
+	var value: nullable Int
+	init do
+		value = null
+	end
+end
+
 class Scope
-	var variables = new HashSet[String]
+	var variables = new ArrayMap[String, Variable]
+	var methods = new ArrayMap[String, Node]
 
 	init do
 	end
 
 	init inherit(s: Scope) do
-		variables.add_all(s.variables)
+		for key,value in s.variables do
+			variables[key] = value
+		end
+		for key,value in s.methods do
+			methods[key] = value
+		end
 	end
-
 end
 
 
@@ -76,25 +88,29 @@ redef class Node
 end
 
 redef class Nstmt_decl
-	redef fun accept_scope(v: ScopeAnalysis) do
-		v.scopes.first.variables.add(n_id.text)
+	redef fun accept_scope(v) do
+		super
+		v.scopes.first.variables[n_id.text] = new Variable
 	end
 end
 
 redef class Nexpr_var
 	redef fun accept_scope(v: ScopeAnalysis) do
-		if not v.scopes.first.variables.has(n_id.text) then
+		if not v.scopes.first.variables.has_key(n_id.text) then
 			print "Undeclared variable"
+			exit(1)
+		end
+
+		if v.scopes.first.variables[n_id.text].value == null then
+			print "Unassigned variable"
 			exit(1)
 		end
 	end
 end
 
 redef class Nstmt_assign
-	redef fun accept_scope(v: ScopeAnalysis) do
-		if not v.scopes.first.variables.has(n_left.text) then
-			print "Undeclared variable"
-			exit(1)
-		end
+	redef fun accept_scope(v) do
+		#no need to assign, just mark the variable as not null
+		v.scopes.first.variables[n_left.text].value = 0
 	end
 end
