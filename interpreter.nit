@@ -12,6 +12,7 @@ end
 
 class Scope
 	var variables = new ArrayMap[String, Variable]
+	var methods = new ArrayMap[String, Node]
 
 	init do
 	end
@@ -19,6 +20,9 @@ class Scope
 	init inherit(s: Scope) do
 		for key,value in s.variables do
 			variables[key] = value
+		end
+		for key,value in s.methods do
+			methods[key] = value
 		end
 	end
 
@@ -44,6 +48,13 @@ end
 
 redef class Nstmt_def
 	redef fun accept_interpreter(v) do
+		v.scopes.first.methods[n_id.text] = self
+	end
+end
+
+redef class Nstmt_call
+	redef fun accept_interpreter(v) do
+		v.scopes.first.methods[n_id.text].visit_children(v)
 	end
 end
 
