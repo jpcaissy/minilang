@@ -34,6 +34,16 @@ redef class Nstmt_if
 	end
 end
 
+redef class Nstmt_def
+	redef fun accept_scope(v: ScopeAnalysis) do
+		var new_scope = new Scope.inherit(v.scopes.first)
+		v.scopes.insert(new_scope, 0)
+		v.enter_visit(n_stmts)
+		v.scopes.shift
+	end
+end
+
+
 redef class Nstmt_while
 	redef fun accept_scope(v: ScopeAnalysis) do
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
@@ -71,6 +81,14 @@ redef class Nstmt_decl
 	end
 end
 
+redef class Nexpr_var
+	redef fun accept_scope(v: ScopeAnalysis) do
+		if not v.scopes.first.variables.has(n_id.text) then
+			print "Undeclared variable"
+			exit(1)
+		end
+	end
+end
 
 redef class Nstmt_assign
 	redef fun accept_scope(v: ScopeAnalysis) do
