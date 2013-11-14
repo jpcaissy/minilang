@@ -10,44 +10,51 @@ Ignored blank;
 
 stmts = stmt | stmts stmt;
 
+def = 'def' id '(' params? ')' '{' stmts '}' ;
+params = params ',' param | param ;
+param = 'int' id ;
+
 cond = 
-    {eq:} [left:]expr '==' [right:]expr |
-    {ne:} [left:]expr '!=' [right:]expr |
-    {lte:} [left:]expr '<=' [right:]expr |
-    {gte:} [left:]expr '>=' [right:]expr |
-    {lt:} [left:]expr '<' [right:]expr |
-    {gt:} [left:]expr '>' [right:]expr;
+	{eq:} [left:]expr '==' [right:]expr |
+	{ne:} [left:]expr '!=' [right:]expr |
+	{lte:} [left:]expr '<=' [right:]expr |
+	{gte:} [left:]expr '>=' [right:]expr |
+	{lt:} [left:]expr '<' [right:]expr |
+	{gt:} [left:]expr '>' [right:]expr;
 
 stmt = 
-    {if:} 'if' '(' cond ')' '{' stmts '}' else |
-    {while:} 'while' '(' cond ')' '{' stmts '}' |
-    {print:} 'print' '(' expr ')' ';' |
-    {print_str:} 'print' '(' str ')' ';' |
-    {assign:} [left:]id '=' [right:]expr ';' |
-    {decl:} 'int' id ';' ;
+	{if:} 'if' '(' cond ')' '{' stmts '}' else |
+	{while:} 'while' '(' cond ')' '{' stmts '}' |
+	{print:} 'print' '(' expr ')' ';' |
+	{print_str:} 'print' '(' str ')' ';' |
+	{assign:} [left:]id '=' [right:]expr ';' |
+	{decl:} 'int' id ';' |
+	{call} id '(' arguments? ')' ';' ;
+
+arguments = arguments ',' expr | expr ;
 
 else =
-    {none:} |
-    {elseif:} 'else' 'if' '(' cond ')' '{' stmts '}' else |
-    {else:} 'else' '{' stmts '}';
+	{none:} |
+	{elseif:} 'else' 'if' '(' cond ')' '{' stmts '}' else |
+	{else:} 'else' '{' stmts '}';
 
 expr = 
-    expr_2 {->};
+	expr_2 {->};
 
 expr_2 {->expr} = 
-    {mod:} [left:]expr_2 '%' [right:]expr_3 |
-    {mul:} [left:]expr_2 '*' [right:]expr_3 |
-    {div:} [left:]expr_2 '/' [right:]expr_3 |
-    expr_3 {->};
+	{mod:} [left:]expr_2 '%' [right:]expr_3 |
+	{mul:} [left:]expr_2 '*' [right:]expr_3 |
+	{div:} [left:]expr_2 '/' [right:]expr_3 |
+	expr_3 {->};
 
 expr_3 {->expr} =
-    {add:} [left:]expr_3 '+' [right:]expr_4 |
-    {sub:} [left:]expr_3 '-' [right:]expr_4 |
-    expr_4 {->};
+	{add:} [left:]expr_3 '+' [right:]expr_4 |
+	{sub:} [left:]expr_3 '-' [right:]expr_4 |
+	expr_4 {->};
 
 expr_4 {->expr} =
-    {neg:} '-' expr_4 |
-    {par:} '(' expr_4 ')' |
-    {var:} id |
-    {read:} 'read' '(' ')' |
-    {int:} int;
+	{neg:} '-' expr_4 |
+	{par:} '(' expr_4 ')' |
+	{var:} id |
+	{read:} 'read' '(' ')' |
+	{int:} int;
