@@ -10,10 +10,6 @@ Ignored blank;
 
 stmts = stmt | stmts stmt;
 
-def = 'def' id '(' params? ')' '{' stmts '}' ;
-params = params ',' param | param ;
-param = 'int' id ;
-
 cond = 
 	{eq:} [left:]expr '==' [right:]expr |
 	{ne:} [left:]expr '!=' [right:]expr |
@@ -29,7 +25,11 @@ stmt =
 	{print_str:} 'print' '(' str ')' ';' |
 	{assign:} [left:]id '=' [right:]expr ';' |
 	{decl:} 'int' id ';' |
-	{call} id '(' arguments? ')' ';' ;
+	{call} id '(' arguments? ')' ';' |
+	{def} 'def' id '(' params? ')' '{' stmts '}' ;
+
+params = params ',' param | param ;
+param = 'int' id ;
 
 arguments = arguments ',' expr | expr ;
 

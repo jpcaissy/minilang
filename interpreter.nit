@@ -42,6 +42,11 @@ redef class Node
 	end
 end
 
+redef class Nstmt_def
+	redef fun accept_interpreter(v) do
+	end
+end
+
 redef class Nexpr_int
 	redef fun accept_interpreter(v) do
 		v.values.push(value.as(not null))
