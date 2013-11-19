@@ -31,37 +31,35 @@ redef class Object
 	private fun state_id_32d_39d_61d_39d: LRStateid_32d_39d_61d_39d do return once new LRStateid_32d_39d_61d_39d
 	private fun state_id_32d_39d_40d_39d: LRStateid_32d_39d_40d_39d do return once new LRStateid_32d_39d_40d_39d
 	private fun state_call_32d_39d_59d_39d: LRStatecall_32d_39d_59d_39d do return once new LRStatecall_32d_39d_59d_39d
-	private fun state__39dreturn_39d_32dassignable: LRState_39dreturn_39d_32dassignable do return once new LRState_39dreturn_39d_32dassignable
-	private fun state__39dreturn_39d_32d_39d_59d_39d: LRState_39dreturn_39d_32d_39d_59d_39d do return once new LRState_39dreturn_39d_32d_39d_59d_39d
 	private fun state__39dreturn_39d_32dexpr: LRState_39dreturn_39d_32dexpr do return once new LRState_39dreturn_39d_32dexpr
+	private fun state__39dreturn_39d_32d_39d_59d_39d: LRState_39dreturn_39d_32d_39d_59d_39d do return once new LRState_39dreturn_39d_32d_39d_59d_39d
 	private fun state__39dreturn_39d_32dexpr_95d2: LRState_39dreturn_39d_32dexpr_95d2 do return once new LRState_39dreturn_39d_32dexpr_95d2
 	private fun state__39dreturn_39d_32dexpr_95d3: LRState_39dreturn_39d_32dexpr_95d3 do return once new LRState_39dreturn_39d_32dexpr_95d3
 	private fun state__39dreturn_39d_32dexpr_95d4: LRState_39dreturn_39d_32dexpr_95d4 do return once new LRState_39dreturn_39d_32dexpr_95d4
+	private fun state__39dreturn_39d_32dcall: LRState_39dreturn_39d_32dcall do return once new LRState_39dreturn_39d_32dcall
+	private fun state__39dreturn_39d_32did: LRState_39dreturn_39d_32did do return once new LRState_39dreturn_39d_32did
 	private fun state__39dreturn_39d_32d_39d_45d_39d: LRState_39dreturn_39d_32d_39d_45d_39d do return once new LRState_39dreturn_39d_32d_39d_45d_39d
 	private fun state__39dreturn_39d_32d_39d_40d_39d: LRState_39dreturn_39d_32d_39d_40d_39d do return once new LRState_39dreturn_39d_32d_39d_40d_39d
-	private fun state__39dreturn_39d_32did: LRState_39dreturn_39d_32did do return once new LRState_39dreturn_39d_32did
 	private fun state__39dreturn_39d_32d_39dread_39d: LRState_39dreturn_39d_32d_39dread_39d do return once new LRState_39dreturn_39d_32d_39dread_39d
 	private fun state__39dreturn_39d_32dint: LRState_39dreturn_39d_32dint do return once new LRState_39dreturn_39d_32dint
-	private fun state__39dreturn_39d_32dcall: LRState_39dreturn_39d_32dcall do return once new LRState_39dreturn_39d_32dcall
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d: LRState_39ddef_39d_32did_32d_39d_40d_39d do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d
 	private fun state__39dif_39d_32d_39d_40d_39d_32dcond: LRState_39dif_39d_32d_39d_40d_39d_32dcond do return once new LRState_39dif_39d_32d_39d_40d_39d_32dcond
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr
 	private fun state__39dwhile_39d_32d_39d_40d_39d_32dcond: LRState_39dwhile_39d_32d_39d_40d_39d_32dcond do return once new LRState_39dwhile_39d_32d_39d_40d_39d_32dcond
-	private fun state__39dprint_39d_32d_39d_40d_39d_32dassignable: LRState_39dprint_39d_32d_39d_40d_39d_32dassignable do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dassignable
+	private fun state__39dprint_39d_32d_39d_40d_39d_32dexpr: LRState_39dprint_39d_32d_39d_40d_39d_32dexpr do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dexpr
 	private fun state__39dprint_39d_32d_39d_40d_39d_32dstr: LRState_39dprint_39d_32d_39d_40d_39d_32dstr do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dstr
 	private fun state__39dint_39d_32did_32d_39d_59d_39d: LRState_39dint_39d_32did_32d_39d_59d_39d do return once new LRState_39dint_39d_32did_32d_39d_59d_39d
-	private fun state_id_32d_39d_61d_39d_32dassignable: LRStateid_32d_39d_61d_39d_32dassignable do return once new LRStateid_32d_39d_61d_39d_32dassignable
+	private fun state_id_32d_39d_61d_39d_32dexpr: LRStateid_32d_39d_61d_39d_32dexpr do return once new LRStateid_32d_39d_61d_39d_32dexpr
 	private fun state_id_32d_39d_40d_39d_32darguments: LRStateid_32d_39d_40d_39d_32darguments do return once new LRStateid_32d_39d_40d_39d_32darguments
 	private fun state_id_32d_39d_40d_39d_32d_39d_41d_39d: LRStateid_32d_39d_40d_39d_32d_39d_41d_39d do return once new LRStateid_32d_39d_40d_39d_32d_39d_41d_39d
-	private fun state_id_32d_39d_40d_39d_32dassignable: LRStateid_32d_39d_40d_39d_32dassignable do return once new LRStateid_32d_39d_40d_39d_32dassignable
-	private fun state__39dreturn_39d_32dassignable_32d_39d_59d_39d: LRState_39dreturn_39d_32dassignable_32d_39d_59d_39d do return once new LRState_39dreturn_39d_32dassignable_32d_39d_59d_39d
+	private fun state_id_32d_39d_40d_39d_32dexpr: LRStateid_32d_39d_40d_39d_32dexpr do return once new LRStateid_32d_39d_40d_39d_32dexpr
+	private fun state__39dreturn_39d_32dexpr_32d_39d_59d_39d: LRState_39dreturn_39d_32dexpr_32d_39d_59d_39d do return once new LRState_39dreturn_39d_32dexpr_32d_39d_59d_39d
 	private fun state__39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d: LRState_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d do return once new LRState_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d
 	private fun state__39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d: LRState_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d do return once new LRState_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d
 	private fun state__39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d: LRState_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d do return once new LRState_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d
 	private fun state__39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d: LRState_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d do return once new LRState_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d
 	private fun state__39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d: LRState_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d do return once new LRState_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d
 	private fun state__39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4: LRState_39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4 do return once new LRState_39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4
-	private fun state__39dreturn_39d_32d_39d_45d_39d_32did: LRState_39dreturn_39d_32d_39d_45d_39d_32did do return once new LRState_39dreturn_39d_32d_39d_45d_39d_32did
 	private fun state__39dreturn_39d_32d_39d_40d_39d_32dexpr: LRState_39dreturn_39d_32d_39d_40d_39d_32dexpr do return once new LRState_39dreturn_39d_32d_39d_40d_39d_32dexpr
 	private fun state__39dreturn_39d_32d_39dread_39d_32d_39d_40d_39d: LRState_39dreturn_39d_32d_39dread_39d_32d_39d_40d_39d do return once new LRState_39dreturn_39d_32d_39dread_39d_32d_39d_40d_39d
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32dparams: LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams
@@ -69,16 +67,16 @@ redef class Object
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32dparam: LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparam do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparam
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d: LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d
 	private fun state__39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d
 	private fun state__39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d: LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d do return once new LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d
-	private fun state__39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d
+	private fun state__39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d
 	private fun state__39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d
-	private fun state_id_32d_39d_61d_39d_32dassignable_32d_39d_59d_39d: LRStateid_32d_39d_61d_39d_32dassignable_32d_39d_59d_39d do return once new LRStateid_32d_39d_61d_39d_32dassignable_32d_39d_59d_39d
+	private fun state_id_32d_39d_61d_39d_32dexpr_32d_39d_59d_39d: LRStateid_32d_39d_61d_39d_32dexpr_32d_39d_59d_39d do return once new LRStateid_32d_39d_61d_39d_32dexpr_32d_39d_59d_39d
 	private fun state_id_32d_39d_40d_39d_32darguments_32d_39d_41d_39d: LRStateid_32d_39d_40d_39d_32darguments_32d_39d_41d_39d do return once new LRStateid_32d_39d_40d_39d_32darguments_32d_39d_41d_39d
 	private fun state_id_32d_39d_40d_39d_32darguments_32d_39d_44d_39d: LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d do return once new LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d
 	private fun state__39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d_32dexpr_95d3: LRState_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d_32dexpr_95d3 do return once new LRState_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d_32dexpr_95d3
@@ -93,16 +91,16 @@ redef class Object
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d: LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d_32did: LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d_32did do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d_32did
 	private fun state__39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d: LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d do return once new LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d_32dassignable
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d_32dassignable
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d_32dassignable
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d_32dassignable
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d_32dassignable
-	private fun state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d_32dassignable: LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d_32dassignable do return once new LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d_32dassignable
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d_32dexpr
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d_32dexpr
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d_32dexpr
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d_32dexpr
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d_32dexpr
+	private fun state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d_32dexpr: LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d_32dexpr do return once new LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d_32dexpr
 	private fun state__39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d: LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d do return once new LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d
-	private fun state__39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d_32d_39d_59d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d_32d_39d_59d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d_32d_39d_59d_39d
+	private fun state__39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d_32d_39d_59d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d_32d_39d_59d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d_32d_39d_59d_39d
 	private fun state__39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d_32d_39d_59d_39d: LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d_32d_39d_59d_39d do return once new LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d_32d_39d_59d_39d
-	private fun state_id_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dassignable: LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dassignable do return once new LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dassignable
+	private fun state_id_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr: LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr do return once new LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_41d_39d_32d_39d_123d_39d: LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_41d_39d_32d_39d_123d_39d do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_41d_39d_32d_39d_123d_39d
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_44d_39d_32dparam: LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_44d_39d_32dparam do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32dparams_32d_39d_44d_39d_32dparam
 	private fun state__39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts: LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts do return once new LRState_39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts
@@ -137,7 +135,6 @@ redef class Object
 	private fun goto_Ncall: Goto_Ncall do return once new Goto_Ncall
 	private fun goto_Narguments: Goto_Narguments do return once new Goto_Narguments
 	private fun goto_Nelse: Goto_Nelse do return once new Goto_Nelse
-	private fun goto_Nassignable: Goto_Nassignable do return once new Goto_Nassignable
 	private fun goto_Nexpr: Goto_Nexpr do return once new Goto_Nexpr
 	private fun goto_Nexpr_95d2: Goto_Nexpr_95d2 do return once new Goto_Nexpr_95d2
 	private fun goto_Nexpr_95d3: Goto_Nexpr_95d3 do return once new Goto_Nexpr_95d3
@@ -256,9 +253,9 @@ redef class NToken
 	private fun action_sid_32d_39d_40d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'return' assignable
+	# guarded action for state 'return' expr
 	# 1 shift(s) and 0 reduce(s)
-	private fun action_s_39dreturn_39d_32dassignable(parser: Parser) do
+	private fun action_s_39dreturn_39d_32dexpr(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state 'return' expr_2
@@ -279,16 +276,6 @@ redef class NToken
 		parser.node_stack.push prod
 		parser.goto(goto_Nexpr_95d2)
 	end
-	# guarded action for state 'return' '-'
-	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dreturn_39d_32d_39d_45d_39d(parser: Parser) do
-		parser.parse_error
-	end
-	# guarded action for state 'return' '('
-	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dreturn_39d_32d_39d_40d_39d(parser: Parser) do
-		parser.parse_error
-	end
 	# guarded action for state 'return' id
 	# 1 shift(s) and 1 reduce(s)
 	private fun action_s_39dreturn_39d_32did(parser: Parser) do
@@ -298,6 +285,16 @@ redef class NToken
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Nexpr_95d4)
+	end
+	# guarded action for state 'return' '-'
+	# 5 shift(s) and 0 reduce(s)
+	private fun action_s_39dreturn_39d_32d_39d_45d_39d(parser: Parser) do
+		parser.parse_error
+	end
+	# guarded action for state 'return' '('
+	# 5 shift(s) and 0 reduce(s)
+	private fun action_s_39dreturn_39d_32d_39d_40d_39d(parser: Parser) do
+		parser.parse_error
 	end
 	# guarded action for state 'return' 'read'
 	# 1 shift(s) and 0 reduce(s)
@@ -314,9 +311,9 @@ redef class NToken
 	private fun action_s_39dif_39d_32d_39d_40d_39d_32dcond(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable
+	# guarded action for state 'if' '(' expr
 	# 6 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state 'while' '(' cond
@@ -324,9 +321,9 @@ redef class NToken
 	private fun action_s_39dwhile_39d_32d_39d_40d_39d_32dcond(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'print' '(' assignable
+	# guarded action for state 'print' '(' expr
 	# 1 shift(s) and 0 reduce(s)
-	private fun action_s_39dprint_39d_32d_39d_40d_39d_32dassignable(parser: Parser) do
+	private fun action_s_39dprint_39d_32d_39d_40d_39d_32dexpr(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state 'print' '(' str
@@ -334,9 +331,9 @@ redef class NToken
 	private fun action_s_39dprint_39d_32d_39d_40d_39d_32dstr(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state id '=' assignable
+	# guarded action for state id '=' expr
 	# 1 shift(s) and 0 reduce(s)
-	private fun action_sid_32d_39d_61d_39d_32dassignable(parser: Parser) do
+	private fun action_sid_32d_39d_61d_39d_32dexpr(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state id '(' arguments
@@ -399,34 +396,34 @@ redef class NToken
 	private fun action_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '=='
+	# guarded action for state 'if' '(' expr '=='
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '!='
+	# guarded action for state 'if' '(' expr '!='
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '<='
+	# guarded action for state 'if' '(' expr '<='
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '>='
+	# guarded action for state 'if' '(' expr '>='
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '<'
+	# guarded action for state 'if' '(' expr '<'
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'if' '(' assignable '>'
+	# guarded action for state 'if' '(' expr '>'
 	# 5 shift(s) and 0 reduce(s)
-	private fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser: Parser) do
+	private fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state 'while' '(' cond ')'
@@ -434,9 +431,9 @@ redef class NToken
 	private fun action_s_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d(parser: Parser) do
 		parser.parse_error
 	end
-	# guarded action for state 'print' '(' assignable ')'
+	# guarded action for state 'print' '(' expr ')'
 	# 1 shift(s) and 0 reduce(s)
-	private fun action_s_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d(parser: Parser) do
+	private fun action_s_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d(parser: Parser) do
 		parser.parse_error
 	end
 	# guarded action for state 'print' '(' str ')'
@@ -648,45 +645,45 @@ class Nid
 		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32d_39d_45d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32d_39d_40d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
-		parser.shift(state__39dreturn_39d_32d_39d_45d_39d_32did)
+		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_s_39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d(parser) do
 		parser.shift(state__39ddef_39d_32did_32d_39d_40d_39d_32d_39dint_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32did)
 	end
 	redef fun action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -768,14 +765,14 @@ class N_39d_40d_39d
 	redef fun action_sid_32d_39d_40d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
+	redef fun action_s_39dreturn_39d_32did(parser) do
+		parser.shift(state_id_32d_39d_40d_39d)
+	end
 	redef fun action_s_39dreturn_39d_32d_39d_45d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
 	redef fun action_s_39dreturn_39d_32d_39d_40d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
-	end
-	redef fun action_s_39dreturn_39d_32did(parser) do
-		parser.shift(state_id_32d_39d_40d_39d)
 	end
 	redef fun action_s_39dreturn_39d_32d_39dread_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d_32d_39d_40d_39d)
@@ -795,22 +792,22 @@ class N_39d_40d_39d
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_40d_39d)
 	end
 	redef fun action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -838,8 +835,8 @@ class N_39d_41d_39d
 	redef fun action_s_39dwhile_39d_32d_39d_40d_39d_32dcond(parser) do
 		parser.shift(state__39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d)
 	end
-	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d)
+	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d)
 	end
 	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dstr(parser) do
 		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d)
@@ -975,43 +972,43 @@ class N_39dint_39d
 end
 class N_39d_61d_61d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d)
 	end
 	redef fun node_name do return "\'==\'"
 end
 class N_39d_33d_61d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d)
 	end
 	redef fun node_name do return "\'!=\'"
 end
 class N_39d_60d_61d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d)
 	end
 	redef fun node_name do return "\'<=\'"
 end
 class N_39d_62d_61d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d)
 	end
 	redef fun node_name do return "\'>=\'"
 end
 class N_39d_60d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d)
 	end
 	redef fun node_name do return "\'<\'"
 end
 class N_39d_62d_39d
 	super NToken
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser) do
-		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d)
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser) do
+		parser.shift(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d)
 	end
 	redef fun node_name do return "\'>\'"
 end
@@ -1185,14 +1182,14 @@ class N_39d_59d_39d
 	redef fun action_s_39dint_39d_32did(parser) do
 		parser.shift(state__39dint_39d_32did_32d_39d_59d_39d)
 	end
-	redef fun action_s_39dreturn_39d_32dassignable(parser) do
-		parser.shift(state__39dreturn_39d_32dassignable_32d_39d_59d_39d)
+	redef fun action_s_39dreturn_39d_32dexpr(parser) do
+		parser.shift(state__39dreturn_39d_32dexpr_32d_39d_59d_39d)
 	end
-	redef fun action_sid_32d_39d_61d_39d_32dassignable(parser) do
-		parser.shift(state_id_32d_39d_61d_39d_32dassignable_32d_39d_59d_39d)
+	redef fun action_sid_32d_39d_61d_39d_32dexpr(parser) do
+		parser.shift(state_id_32d_39d_61d_39d_32dexpr_32d_39d_59d_39d)
 	end
-	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d(parser) do
-		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d_32d_39d_59d_39d)
+	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d(parser) do
+		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d_32d_39d_59d_39d)
 	end
 	redef fun action_s_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d(parser) do
 		parser.shift(state__39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d_32d_39d_59d_39d)
@@ -1356,22 +1353,22 @@ class N_39d_45d_39d
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39d_45d_39d)
 	end
 	redef fun action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -1432,22 +1429,22 @@ class N_39dread_39d
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32d_39dread_39d)
 	end
 	redef fun action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -1499,22 +1496,22 @@ class Nint
 	redef fun action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
-	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.shift(state__39dreturn_39d_32dint)
 	end
 	redef fun action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -1543,17 +1540,20 @@ redef class LRGoto
 	private fun goto_s_39dprint_39d_32d_39d_40d_39d(parser: Parser) do abort
 	private fun goto_sid_32d_39d_61d_39d(parser: Parser) do abort
 	private fun goto_sid_32d_39d_40d_39d(parser: Parser) do abort
+	private fun goto_s_39dreturn_39d_32d_39d_45d_39d(parser: Parser) do abort
 	private fun goto_s_39dreturn_39d_32d_39d_40d_39d(parser: Parser) do abort
 	private fun goto_s_39ddef_39d_32did_32d_39d_40d_39d(parser: Parser) do abort
 	private fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d(parser: Parser) do abort
 	private fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d(parser: Parser) do abort
 	private fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser: Parser) do abort
-	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser: Parser) do abort
+	private fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser: Parser) do abort
+	private fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser: Parser) do abort
+	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser: Parser) do abort
 	private fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser: Parser) do abort
 	private fun goto_s_39ddef_39d_32did_32d_39d_40d_39d_32d_39d_41d_39d_32d_39d_123d_39d(parser: Parser) do abort
 	private fun goto_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d(parser: Parser) do abort
@@ -1724,22 +1724,43 @@ class Goto_Ncall
 	redef fun goto_sid_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32d_39d_45d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dcall)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dcall)
 	end
 	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -1794,97 +1815,52 @@ end
 class Goto_Nelse
 	super LRGoto
 end
-class Goto_Nassignable
-	super LRGoto
-	redef fun goto_s_39dreturn_39d(parser) do
-		parser.push(state__39dreturn_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable)
-	end
-	redef fun goto_s_39dwhile_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable)
-	end
-	redef fun goto_s_39dprint_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dprint_39d_32d_39d_40d_39d_32dassignable)
-	end
-	redef fun goto_sid_32d_39d_61d_39d(parser) do
-		parser.push(state_id_32d_39d_61d_39d_32dassignable)
-	end
-	redef fun goto_sid_32d_39d_40d_39d(parser) do
-		parser.push(state_id_32d_39d_40d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d_32dassignable)
-	end
-	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
-		parser.push(state_id_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dassignable)
-	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts_32d_39d_125d_39d_32d_39delse_39d_32d_39dif_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dif_39d_32d_39d_40d_39d_32dassignable)
-	end
-end
 class Goto_Nexpr
 	super LRGoto
 	redef fun goto_s_39dreturn_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr)
 	end
 	redef fun goto_s_39dif_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr)
 	end
 	redef fun goto_s_39dwhile_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr)
 	end
 	redef fun goto_s_39dprint_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state__39dprint_39d_32d_39d_40d_39d_32dexpr)
 	end
 	redef fun goto_sid_32d_39d_61d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state_id_32d_39d_61d_39d_32dexpr)
 	end
 	redef fun goto_sid_32d_39d_40d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state_id_32d_39d_40d_39d_32dexpr)
 	end
 	redef fun goto_s_39dreturn_39d_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32d_39d_40d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d_32dexpr)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d_32dexpr)
 	end
 	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state_id_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr)
 	end
 	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts_32d_39d_125d_39d_32d_39delse_39d_32d_39dif_39d_32d_39d_40d_39d(parser) do
-		parser.push(state__39dreturn_39d_32dexpr)
+		parser.push(state__39dif_39d_32d_39d_40d_39d_32dexpr)
 	end
 end
 class Goto_Nexpr_95d2
@@ -1910,22 +1886,22 @@ class Goto_Nexpr_95d2
 	redef fun goto_s_39dreturn_39d_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2)
 	end
 	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -1967,22 +1943,22 @@ class Goto_Nexpr_95d3
 	redef fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d3)
 	end
 	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -2012,6 +1988,9 @@ class Goto_Nexpr_95d4
 	redef fun goto_sid_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
+	redef fun goto_s_39dreturn_39d_32d_39d_45d_39d(parser) do
+		parser.push(state__39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4)
+	end
 	redef fun goto_s_39dreturn_39d_32d_39d_40d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
@@ -2024,22 +2003,28 @@ class Goto_Nexpr_95d4
 	redef fun goto_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser) do
+	redef fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d_32dexpr_95d4)
+	end
+	redef fun goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser) do
+		parser.push(state__39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d_32dexpr_95d4)
+	end
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
-	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser) do
+	redef fun goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser) do
 		parser.push(state__39dreturn_39d_32dexpr_95d4)
 	end
 	redef fun goto_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser) do
@@ -2227,10 +2212,10 @@ end
 class Ncond_eq
 	super Ncond
 	redef fun node_name do return "cond_eq"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_61d_61d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_61d_61d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_61d_61d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2246,10 +2231,10 @@ end
 class Ncond_ne
 	super Ncond
 	redef fun node_name do return "cond_ne"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_33d_61d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_33d_61d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_33d_61d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2265,10 +2250,10 @@ end
 class Ncond_lte
 	super Ncond
 	redef fun node_name do return "cond_lte"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_60d_61d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_60d_61d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_60d_61d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2284,10 +2269,10 @@ end
 class Ncond_gte
 	super Ncond
 	redef fun node_name do return "cond_gte"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_62d_61d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_62d_61d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_62d_61d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2303,10 +2288,10 @@ end
 class Ncond_lt
 	super Ncond
 	redef fun node_name do return "cond_lt"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_60d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_60d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_60d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2322,10 +2307,10 @@ end
 class Ncond_gt
 	super Ncond
 	redef fun node_name do return "cond_gt"
-	var n_left: Nassignable
+	var n_left: Nexpr
 	var n_1: N_39d_62d_39d
-	var n_right: Nassignable
-	init(n_left: Nassignable, n_1: N_39d_62d_39d, n_right: Nassignable) do
+	var n_right: Nexpr
+	init(n_left: Nexpr, n_1: N_39d_62d_39d, n_right: Nexpr) do
 		self.n_left = n_left
 		self.n_1 = n_1
 		self.n_right = n_right
@@ -2412,10 +2397,10 @@ class Nstmt_print
 	redef fun node_name do return "stmt_print"
 	var n_0: N_39dprint_39d
 	var n_1: N_39d_40d_39d
-	var n_expr: Nassignable
+	var n_expr: Nexpr
 	var n_3: N_39d_41d_39d
 	var n_4: N_39d_59d_39d
-	init(n_0: N_39dprint_39d, n_1: N_39d_40d_39d, n_expr: Nassignable, n_3: N_39d_41d_39d, n_4: N_39d_59d_39d) do
+	init(n_0: N_39dprint_39d, n_1: N_39d_40d_39d, n_expr: Nexpr, n_3: N_39d_41d_39d, n_4: N_39d_59d_39d) do
 		self.n_0 = n_0
 		self.n_1 = n_1
 		self.n_expr = n_expr
@@ -2481,9 +2466,9 @@ class Nstmt_assign
 	redef fun node_name do return "stmt_assign"
 	var n_id: Nid
 	var n_1: N_39d_61d_39d
-	var n_expr: Nassignable
+	var n_expr: Nexpr
 	var n_3: N_39d_59d_39d
-	init(n_id: Nid, n_1: N_39d_61d_39d, n_expr: Nassignable, n_3: N_39d_59d_39d) do
+	init(n_id: Nid, n_1: N_39d_61d_39d, n_expr: Nexpr, n_3: N_39d_59d_39d) do
 		self.n_id = n_id
 		self.n_1 = n_1
 		self.n_expr = n_expr
@@ -2518,9 +2503,9 @@ class Nstmt_return
 	super Nstmt
 	redef fun node_name do return "stmt_return"
 	var n_0: N_39dreturn_39d
-	var n_expr: nullable Nassignable
+	var n_expr: nullable Nexpr
 	var n_2: N_39d_59d_39d
-	init(n_0: N_39dreturn_39d, n_expr: nullable Nassignable, n_2: N_39d_59d_39d) do
+	init(n_0: N_39dreturn_39d, n_expr: nullable Nexpr, n_2: N_39d_59d_39d) do
 		self.n_0 = n_0
 		self.n_expr = n_expr
 		self.n_2 = n_2
@@ -2564,8 +2549,8 @@ class Narguments_multiple
 	redef fun node_name do return "arguments_multiple"
 	var n_arguments: Narguments
 	var n_1: N_39d_44d_39d
-	var n_expr: Nassignable
-	init(n_arguments: Narguments, n_1: N_39d_44d_39d, n_expr: Nassignable) do
+	var n_expr: Nexpr
+	init(n_arguments: Narguments, n_1: N_39d_44d_39d, n_expr: Nexpr) do
 		self.n_arguments = n_arguments
 		self.n_1 = n_1
 		self.n_expr = n_expr
@@ -2581,8 +2566,8 @@ end
 class Narguments_single
 	super Narguments
 	redef fun node_name do return "arguments_single"
-	var n_expr: Nassignable
-	init(n_expr: Nassignable) do
+	var n_expr: Nexpr
+	init(n_expr: Nexpr) do
 		self.n_expr = n_expr
 	end
 	redef fun number_of_children do return 1
@@ -2660,36 +2645,6 @@ class Nelse_else
 		if i == 1 then return n_1
 		if i == 2 then return n_stmts
 		if i == 3 then return n_3
-		abort
-	end
-end
-class Nassignable
-	super NProd
-	redef fun node_name do return "assignable"
-end
-class Nassignable_expr
-	super Nassignable
-	redef fun node_name do return "assignable_expr"
-	var n_expr: Nexpr
-	init(n_expr: Nexpr) do
-		self.n_expr = n_expr
-	end
-	redef fun number_of_children do return 1
-	redef fun child(i) do
-		if i == 0 then return n_expr
-		abort
-	end
-end
-class Nassignable_call
-	super Nassignable
-	redef fun node_name do return "assignable_call"
-	var n_call: Ncall
-	init(n_call: Ncall) do
-		self.n_call = n_call
-	end
-	redef fun number_of_children do return 1
-	redef fun child(i) do
-		if i == 0 then return n_call
 		abort
 	end
 end
@@ -2789,6 +2744,19 @@ class Nexpr_sub
 		if i == 0 then return n_left
 		if i == 1 then return n_1
 		if i == 2 then return n_right
+		abort
+	end
+end
+class Nexpr_call
+	super Nexpr
+	redef fun node_name do return "expr_call"
+	var n_call: Ncall
+	init(n_call: Ncall) do
+		self.n_call = n_call
+	end
+	redef fun number_of_children do return 1
+	redef fun child(i) do
+		if i == 0 then return n_call
 		abort
 	end
 end
@@ -3032,7 +3000,7 @@ end
 private class LRState_39dreturn_39d
 	super LRState
 	redef fun to_s do return "\'return\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d(parser)
 	end
@@ -3110,7 +3078,7 @@ end
 private class LRState_39dif_39d_32d_39d_40d_39d
 	super LRState
 	redef fun to_s do return "\'if\' \'(\'"
-	redef fun error_msg do return "cond, assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "cond, expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d(parser)
 	end
@@ -3122,7 +3090,7 @@ end
 private class LRState_39dwhile_39d_32d_39d_40d_39d
 	super LRState
 	redef fun to_s do return "\'while\' \'(\'"
-	redef fun error_msg do return "cond, assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "cond, expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dwhile_39d_32d_39d_40d_39d(parser)
 	end
@@ -3134,7 +3102,7 @@ end
 private class LRState_39dprint_39d_32d_39d_40d_39d
 	super LRState
 	redef fun to_s do return "\'print\' \'(\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d(parser)
 	end
@@ -3155,7 +3123,7 @@ end
 private class LRStateid_32d_39d_61d_39d
 	super LRState
 	redef fun to_s do return "id \'=\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_sid_32d_39d_61d_39d(parser)
 	end
@@ -3167,7 +3135,7 @@ end
 private class LRStateid_32d_39d_40d_39d
 	super LRState
 	redef fun to_s do return "id \'(\'"
-	redef fun error_msg do return "arguments, assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "arguments, expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_sid_32d_39d_40d_39d(parser)
 	end
@@ -3190,13 +3158,13 @@ private class LRStatecall_32d_39d_59d_39d
 		parser.goto(goto_Nstmt)
 	end
 end
-# State 'return' assignable
-private class LRState_39dreturn_39d_32dassignable
+# State 'return' expr
+private class LRState_39dreturn_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'return\' assignable"
+	redef fun to_s do return "\'return\' expr"
 	redef fun error_msg do return "\';\'"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dreturn_39d_32dassignable(parser)
+		parser.peek_token.action_s_39dreturn_39d_32dexpr(parser)
 	end
 end
 # State 'return' ';'
@@ -3212,20 +3180,6 @@ private class LRState_39dreturn_39d_32d_39d_59d_39d
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Nstmt)
-	end
-end
-# State 'return' expr
-private class LRState_39dreturn_39d_32dexpr
-	super LRState
-	redef fun to_s do return "\'return\' expr"
-	redef fun error_msg do return ""
-	redef fun action(parser) do
-		# REDUCE assignable::assignable_expr=expr
-		var n0 = parser.pop.as(Nexpr)
-		var p1 = new Nassignable_expr(n0)
-		var prod = p1
-		parser.node_stack.push prod
-		parser.goto(goto_Nassignable)
 	end
 end
 # State 'return' expr_2
@@ -3259,28 +3213,18 @@ private class LRState_39dreturn_39d_32dexpr_95d4
 		parser.goto(goto_Nexpr_95d3)
 	end
 end
-# State 'return' '-'
-private class LRState_39dreturn_39d_32d_39d_45d_39d
+# State 'return' call
+private class LRState_39dreturn_39d_32dcall
 	super LRState
-	redef fun to_s do return "\'return\' \'-\'"
-	redef fun error_msg do return "expr_4"
+	redef fun to_s do return "\'return\' call"
+	redef fun error_msg do return ""
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dreturn_39d_32d_39d_45d_39d(parser)
-	end
-	redef fun goto(parser, goto) do
-		parser.push(state__39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4)
-	end
-end
-# State 'return' '('
-private class LRState_39dreturn_39d_32d_39d_40d_39d
-	super LRState
-	redef fun to_s do return "\'return\' \'(\'"
-	redef fun error_msg do return "expr, expr_2, expr_3, expr_4"
-	redef fun action(parser) do
-		parser.peek_token.action_s_39dreturn_39d_32d_39d_40d_39d(parser)
-	end
-	redef fun goto(parser, goto) do
-		goto.goto_s_39dreturn_39d_32d_39d_40d_39d(parser)
+		# REDUCE expr_4::expr_call=call
+		var n0 = parser.pop.as(Ncall)
+		var p1 = new Nexpr_call(n0)
+		var prod = p1
+		parser.node_stack.push prod
+		parser.goto(goto_Nexpr_95d4)
 	end
 end
 # State 'return' id
@@ -3290,6 +3234,30 @@ private class LRState_39dreturn_39d_32did
 	redef fun error_msg do return "\'(\'"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32did(parser)
+	end
+end
+# State 'return' '-'
+private class LRState_39dreturn_39d_32d_39d_45d_39d
+	super LRState
+	redef fun to_s do return "\'return\' \'-\'"
+	redef fun error_msg do return "expr_4, call"
+	redef fun action(parser) do
+		parser.peek_token.action_s_39dreturn_39d_32d_39d_45d_39d(parser)
+	end
+	redef fun goto(parser, goto) do
+		goto.goto_s_39dreturn_39d_32d_39d_45d_39d(parser)
+	end
+end
+# State 'return' '('
+private class LRState_39dreturn_39d_32d_39d_40d_39d
+	super LRState
+	redef fun to_s do return "\'return\' \'(\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
+	redef fun action(parser) do
+		parser.peek_token.action_s_39dreturn_39d_32d_39d_40d_39d(parser)
+	end
+	redef fun goto(parser, goto) do
+		goto.goto_s_39dreturn_39d_32d_39d_40d_39d(parser)
 	end
 end
 # State 'return' 'read'
@@ -3315,20 +3283,6 @@ private class LRState_39dreturn_39d_32dint
 		parser.goto(goto_Nexpr_95d4)
 	end
 end
-# State 'return' call
-private class LRState_39dreturn_39d_32dcall
-	super LRState
-	redef fun to_s do return "\'return\' call"
-	redef fun error_msg do return ""
-	redef fun action(parser) do
-		# REDUCE assignable::assignable_call=call
-		var n0 = parser.pop.as(Ncall)
-		var p1 = new Nassignable_call(n0)
-		var prod = p1
-		parser.node_stack.push prod
-		parser.goto(goto_Nassignable)
-	end
-end
 # State 'def' id '('
 private class LRState_39ddef_39d_32did_32d_39d_40d_39d
 	super LRState
@@ -3350,13 +3304,13 @@ private class LRState_39dif_39d_32d_39d_40d_39d_32dcond
 		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dcond(parser)
 	end
 end
-# State 'if' '(' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable
+# State 'if' '(' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr"
 	redef fun error_msg do return "\'==\', \'!=\', \'<=\', \'>=\', \'<\', \'>\'"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr(parser)
 	end
 end
 # State 'while' '(' cond
@@ -3368,13 +3322,13 @@ private class LRState_39dwhile_39d_32d_39d_40d_39d_32dcond
 		parser.peek_token.action_s_39dwhile_39d_32d_39d_40d_39d_32dcond(parser)
 	end
 end
-# State 'print' '(' assignable
-private class LRState_39dprint_39d_32d_39d_40d_39d_32dassignable
+# State 'print' '(' expr
+private class LRState_39dprint_39d_32d_39d_40d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'print\' \'(\' assignable"
+	redef fun to_s do return "\'print\' \'(\' expr"
 	redef fun error_msg do return "\')\'"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d_32dassignable(parser)
+		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d_32dexpr(parser)
 	end
 end
 # State 'print' '(' str
@@ -3402,13 +3356,13 @@ private class LRState_39dint_39d_32did_32d_39d_59d_39d
 		parser.goto(goto_Nstmt)
 	end
 end
-# State id '=' assignable
-private class LRStateid_32d_39d_61d_39d_32dassignable
+# State id '=' expr
+private class LRStateid_32d_39d_61d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "id \'=\' assignable"
+	redef fun to_s do return "id \'=\' expr"
 	redef fun error_msg do return "\';\'"
 	redef fun action(parser) do
-		parser.peek_token.action_sid_32d_39d_61d_39d_32dassignable(parser)
+		parser.peek_token.action_sid_32d_39d_61d_39d_32dexpr(parser)
 	end
 end
 # State id '(' arguments
@@ -3436,29 +3390,29 @@ private class LRStateid_32d_39d_40d_39d_32d_39d_41d_39d
 		parser.goto(goto_Ncall)
 	end
 end
-# State id '(' assignable
-private class LRStateid_32d_39d_40d_39d_32dassignable
+# State id '(' expr
+private class LRStateid_32d_39d_40d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "id \'(\' assignable"
+	redef fun to_s do return "id \'(\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE arguments::arguments_single=assignable
-		var n0 = parser.pop.as(Nassignable)
+		# REDUCE arguments::arguments_single=expr
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Narguments_single(n0)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Narguments)
 	end
 end
-# State 'return' assignable ';'
-private class LRState_39dreturn_39d_32dassignable_32d_39d_59d_39d
+# State 'return' expr ';'
+private class LRState_39dreturn_39d_32dexpr_32d_39d_59d_39d
 	super LRState
-	redef fun to_s do return "\'return\' assignable \';\'"
+	redef fun to_s do return "\'return\' expr \';\'"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE stmt::stmt_return_0='return' assignable ';'
+		# REDUCE stmt::stmt_return_0='return' expr ';'
 		var n2 = parser.pop.as(N_39d_59d_39d)
-		var n1 = parser.pop.as(Nassignable)
+		var n1 = parser.pop.as(Nexpr)
 		var n0 = parser.pop.as(N_39dreturn_39d)
 		var p1 = new Nstmt_return(n0, n1, n2)
 		var prod = p1
@@ -3470,7 +3424,7 @@ end
 private class LRState_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d
 	super LRState
 	redef fun to_s do return "\'return\' expr_2 \'%\'"
-	redef fun error_msg do return "expr_3, expr_4"
+	redef fun error_msg do return "expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32dexpr_95d2_32d_39d_37d_39d(parser)
 	end
@@ -3482,7 +3436,7 @@ end
 private class LRState_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d
 	super LRState
 	redef fun to_s do return "\'return\' expr_2 \'*\'"
-	redef fun error_msg do return "expr_3, expr_4"
+	redef fun error_msg do return "expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32dexpr_95d2_32d_39d_42d_39d(parser)
 	end
@@ -3494,7 +3448,7 @@ end
 private class LRState_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d
 	super LRState
 	redef fun to_s do return "\'return\' expr_2 \'/\'"
-	redef fun error_msg do return "expr_3, expr_4"
+	redef fun error_msg do return "expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32dexpr_95d2_32d_39d_47d_39d(parser)
 	end
@@ -3506,24 +3460,24 @@ end
 private class LRState_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d
 	super LRState
 	redef fun to_s do return "\'return\' expr_3 \'+\'"
-	redef fun error_msg do return "expr_4"
+	redef fun error_msg do return "expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		parser.push(state__39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d_32dexpr_95d4)
+		goto.goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_43d_39d(parser)
 	end
 end
 # State 'return' expr_3 '-'
 private class LRState_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d
 	super LRState
 	redef fun to_s do return "\'return\' expr_3 \'-\'"
-	redef fun error_msg do return "expr_4"
+	redef fun error_msg do return "expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		parser.push(state__39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d_32dexpr_95d4)
+		goto.goto_s_39dreturn_39d_32dexpr_95d3_32d_39d_45d_39d(parser)
 	end
 end
 # State 'return' '-' expr_4
@@ -3536,20 +3490,6 @@ private class LRState_39dreturn_39d_32d_39d_45d_39d_32dexpr_95d4
 		var n1 = parser.pop.as(Nexpr)
 		var n0 = parser.pop.as(N_39d_45d_39d)
 		var p1 = new Nexpr_neg(n0, n1)
-		var prod = p1
-		parser.node_stack.push prod
-		parser.goto(goto_Nexpr_95d4)
-	end
-end
-# State 'return' '-' id
-private class LRState_39dreturn_39d_32d_39d_45d_39d_32did
-	super LRState
-	redef fun to_s do return "\'return\' \'-\' id"
-	redef fun error_msg do return ""
-	redef fun action(parser) do
-		# REDUCE expr_4::expr_var=id
-		var n0 = parser.pop.as(Nid)
-		var p1 = new Nexpr_var(n0)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Nexpr_95d4)
@@ -3623,76 +3563,76 @@ private class LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d
 		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '=='
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d
+# State 'if' '(' expr '=='
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'==\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'==\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '!='
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d
+# State 'if' '(' expr '!='
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'!=\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'!=\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '<='
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d
+# State 'if' '(' expr '<='
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'<=\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'<=\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '>='
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d
+# State 'if' '(' expr '>='
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'>=\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'>=\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '<'
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d
+# State 'if' '(' expr '<'
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'<\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'<\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '>'
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d
+# State 'if' '(' expr '>'
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'>\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun to_s do return "\'if\' \'(\' expr \'>\'"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser)
+		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser)
 	end
 	redef fun goto(parser, goto) do
-		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d(parser)
+		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d(parser)
 	end
 end
 # State 'while' '(' cond ')'
@@ -3704,13 +3644,13 @@ private class LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d
 		parser.peek_token.action_s_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d(parser)
 	end
 end
-# State 'print' '(' assignable ')'
-private class LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d
+# State 'print' '(' expr ')'
+private class LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d
 	super LRState
-	redef fun to_s do return "\'print\' \'(\' assignable \')\'"
+	redef fun to_s do return "\'print\' \'(\' expr \')\'"
 	redef fun error_msg do return "\';\'"
 	redef fun action(parser) do
-		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d(parser)
+		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d(parser)
 	end
 end
 # State 'print' '(' str ')'
@@ -3722,15 +3662,15 @@ private class LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d
 		parser.peek_token.action_s_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d(parser)
 	end
 end
-# State id '=' assignable ';'
-private class LRStateid_32d_39d_61d_39d_32dassignable_32d_39d_59d_39d
+# State id '=' expr ';'
+private class LRStateid_32d_39d_61d_39d_32dexpr_32d_39d_59d_39d
 	super LRState
-	redef fun to_s do return "id \'=\' assignable \';\'"
+	redef fun to_s do return "id \'=\' expr \';\'"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE stmt::stmt_assign=id '=' assignable ';'
+		# REDUCE stmt::stmt_assign=id '=' expr ';'
 		var n3 = parser.pop.as(N_39d_59d_39d)
-		var n2 = parser.pop.as(Nassignable)
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_61d_39d)
 		var n0 = parser.pop.as(Nid)
 		var p1 = new Nstmt_assign(n0, n1, n2, n3)
@@ -3760,7 +3700,7 @@ end
 private class LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d
 	super LRState
 	redef fun to_s do return "id \'(\' arguments \',\'"
-	redef fun error_msg do return "assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_sid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d(parser)
 	end
@@ -3919,96 +3859,96 @@ private class LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_
 		goto.goto_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d(parser)
 	end
 end
-# State 'if' '(' assignable '==' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_61d_61d_39d_32dassignable
+# State 'if' '(' expr '==' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_61d_61d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'==\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'==\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_eq=assignable '==' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_eq=expr '==' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_61d_61d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_eq(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Ncond)
 	end
 end
-# State 'if' '(' assignable '!=' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_33d_61d_39d_32dassignable
+# State 'if' '(' expr '!=' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_33d_61d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'!=\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'!=\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_ne=assignable '!=' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_ne=expr '!=' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_33d_61d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_ne(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Ncond)
 	end
 end
-# State 'if' '(' assignable '<=' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_61d_39d_32dassignable
+# State 'if' '(' expr '<=' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_61d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'<=\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'<=\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_lte=assignable '<=' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_lte=expr '<=' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_60d_61d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_lte(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Ncond)
 	end
 end
-# State 'if' '(' assignable '>=' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_61d_39d_32dassignable
+# State 'if' '(' expr '>=' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_61d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'>=\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'>=\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_gte=assignable '>=' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_gte=expr '>=' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_62d_61d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_gte(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Ncond)
 	end
 end
-# State 'if' '(' assignable '<' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_60d_39d_32dassignable
+# State 'if' '(' expr '<' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_60d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'<\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'<\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_lt=assignable '<' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_lt=expr '<' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_60d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_lt(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
 		parser.goto(goto_Ncond)
 	end
 end
-# State 'if' '(' assignable '>' assignable
-private class LRState_39dif_39d_32d_39d_40d_39d_32dassignable_32d_39d_62d_39d_32dassignable
+# State 'if' '(' expr '>' expr
+private class LRState_39dif_39d_32d_39d_40d_39d_32dexpr_32d_39d_62d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "\'if\' \'(\' assignable \'>\' assignable"
+	redef fun to_s do return "\'if\' \'(\' expr \'>\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE cond::cond_gt=assignable '>' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE cond::cond_gt=expr '>' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_62d_39d)
-		var n0 = parser.pop.as(Nassignable)
+		var n0 = parser.pop.as(Nexpr)
 		var p1 = new Ncond_gt(n0, n1, n2)
 		var prod = p1
 		parser.node_stack.push prod
@@ -4027,16 +3967,16 @@ private class LRState_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_3
 		goto.goto_s_39dwhile_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d(parser)
 	end
 end
-# State 'print' '(' assignable ')' ';'
-private class LRState_39dprint_39d_32d_39d_40d_39d_32dassignable_32d_39d_41d_39d_32d_39d_59d_39d
+# State 'print' '(' expr ')' ';'
+private class LRState_39dprint_39d_32d_39d_40d_39d_32dexpr_32d_39d_41d_39d_32d_39d_59d_39d
 	super LRState
-	redef fun to_s do return "\'print\' \'(\' assignable \')\' \';\'"
+	redef fun to_s do return "\'print\' \'(\' expr \')\' \';\'"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE stmt::stmt_print='print' '(' assignable ')' ';'
+		# REDUCE stmt::stmt_print='print' '(' expr ')' ';'
 		var n4 = parser.pop.as(N_39d_59d_39d)
 		var n3 = parser.pop.as(N_39d_41d_39d)
-		var n2 = parser.pop.as(Nassignable)
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_40d_39d)
 		var n0 = parser.pop.as(N_39dprint_39d)
 		var p1 = new Nstmt_print(n0, n1, n2, n3, n4)
@@ -4063,14 +4003,14 @@ private class LRState_39dprint_39d_32d_39d_40d_39d_32dstr_32d_39d_41d_39d_32d_39
 		parser.goto(goto_Nstmt)
 	end
 end
-# State id '(' arguments ',' assignable
-private class LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dassignable
+# State id '(' arguments ',' expr
+private class LRStateid_32d_39d_40d_39d_32darguments_32d_39d_44d_39d_32dexpr
 	super LRState
-	redef fun to_s do return "id \'(\' arguments \',\' assignable"
+	redef fun to_s do return "id \'(\' arguments \',\' expr"
 	redef fun error_msg do return ""
 	redef fun action(parser) do
-		# REDUCE arguments::arguments_multiple=arguments ',' assignable
-		var n2 = parser.pop.as(Nassignable)
+		# REDUCE arguments::arguments_multiple=arguments ',' expr
+		var n2 = parser.pop.as(Nexpr)
 		var n1 = parser.pop.as(N_39d_44d_39d)
 		var n0 = parser.pop.as(Narguments)
 		var p1 = new Narguments_multiple(n0, n1, n2)
@@ -4283,7 +4223,7 @@ end
 private class LRState_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts_32d_39d_125d_39d_32d_39delse_39d_32d_39dif_39d_32d_39d_40d_39d
 	super LRState
 	redef fun to_s do return "\'if\' \'(\' cond \')\' \'\{\' stmts \'\}\' \'else\' \'if\' \'(\'"
-	redef fun error_msg do return "cond, assignable, expr, expr_2, expr_3, expr_4, call"
+	redef fun error_msg do return "cond, expr, expr_2, expr_3, expr_4, call"
 	redef fun action(parser) do
 		parser.peek_token.action_s_39dif_39d_32d_39d_40d_39d_32dcond_32d_39d_41d_39d_32d_39d_123d_39d_32dstmts_32d_39d_125d_39d_32d_39delse_39d_32d_39dif_39d_32d_39d_40d_39d(parser)
 	end

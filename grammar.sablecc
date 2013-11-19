@@ -20,38 +20,34 @@ param = 'int' id ;
 stmts = stmt | stmts stmt;
 
 cond = 
-	{eq:} [left:]assignable '==' [right:]assignable |
-	{ne:} [left:]assignable '!=' [right:]assignable |
-	{lte:} [left:]assignable '<=' [right:]assignable |
-	{gte:} [left:]assignable '>=' [right:]assignable |
-	{lt:} [left:]assignable '<' [right:]assignable |
-	{gt:} [left:]assignable '>' [right:]assignable;
+	{eq:} [left:]expr '==' [right:]expr |
+	{ne:} [left:]expr '!=' [right:]expr |
+	{lte:} [left:]expr '<=' [right:]expr |
+	{gte:} [left:]expr '>=' [right:]expr |
+	{lt:} [left:]expr '<' [right:]expr |
+	{gt:} [left:]expr '>' [right:]expr;
 
 stmt = 
 	{if:} 'if' '(' cond ')' '{' stmts '}' else |
 	{while:} 'while' '(' cond ')' '{' stmts '}' |
-	{print:} 'print' '(' [expr:]assignable ')' ';' |
+	{print:} 'print' '(' [expr:]expr ')' ';' |
 	{print_str:} 'print' '(' str ')' ';' |
 	{decl:} 'int' id ';' |
-	{return:} 'return' [expr:]assignable? ';' |
-	{assign:} id '=' [expr:]assignable ';' |
+	{return:} 'return' [expr:]expr? ';' |
+	{assign:} id '=' [expr:]expr ';' |
 	{call:} call ';' ;
 
 call =
 	id '(' arguments? ')' ;
 
 arguments = 
-	{multiple:} arguments ',' [expr:]assignable |
-	{single:} [expr:]assignable ;
+	{multiple:} arguments ',' [expr:]expr |
+	{single:} [expr:]expr ;
 
 else =
 	{none:} |
 	{elseif:} 'else' 'if' '(' cond ')' '{' stmts '}' else |
 	{else:} 'else' '{' stmts '}';
-
-assignable = 
-	{expr:} expr |
-	{call:} call ;
 
 expr = 
 	expr_2 {->};
@@ -68,6 +64,7 @@ expr_3 {->expr} =
 	expr_4 {->};
 
 expr_4 {->expr} =
+	{call:} call |
 	{neg:} '-' expr_4 |
 	{par:} '(' expr ')' |
 	{var:} id |

@@ -78,13 +78,6 @@ redef class Nparam
 end
 
 
-redef class Nstmt_call
-	redef fun accept_interpreter(v) do
-		if v.has_return then return
-		v.enter_visit(n_call)
-	end
-end
-
 redef class Ncall
 	redef fun accept_interpreter(v) do
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
