@@ -119,10 +119,10 @@ end
 
 redef class Nstmt_assign
 	redef fun accept_scope(v) do
-		if not v.scopes.first.variables.has_key(n_left.text) then
+		if not v.scopes.first.variables.has_key(n_id.text) then
 			print "Undeclared variable"
 			exit(1)
 		end
-		v.scopes.first.variables[n_left.text].assigned = true
+		v.scopes.first.variables[n_id.text].assigned = true
 	end
 end

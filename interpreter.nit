@@ -81,7 +81,12 @@ end
 redef class Nstmt_call
 	redef fun accept_interpreter(v) do
 		if v.has_return then return
+		v.enter_visit(n_call)
+	end
+end
 
+redef class Ncall
+	redef fun accept_interpreter(v) do
 		v.scopes.insert(new Scope.inherit(v.scopes.first), 0)
 
 		if n_arguments != null then
@@ -102,6 +107,9 @@ end
 
 redef class Nstmt_return
 	redef fun accept_interpreter(v) do
+		if n_expr != null then
+			v.enter_visit(n_expr.as(not null))
+		end
 		v.has_return = true
 	end
 end
@@ -184,7 +192,7 @@ redef class Nstmt_assign
 	redef fun accept_interpreter(v) do
 		if v.has_return then return
 		super
-		v.scopes.first.variables[n_left.text].value = v.values.pop
+		v.scopes.first.variables[n_id.text].value = v.values.pop
 	end
 end
 

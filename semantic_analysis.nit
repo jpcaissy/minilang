@@ -25,7 +25,7 @@ redef class Ndef
 	end
 end
 
-redef class Nstmt_call
+redef class Ncall
 	redef fun accept_semantic(v) do
 		super
 		if not v.methods.has_key(n_id.text) then
