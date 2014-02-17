@@ -1,0 +1,13 @@
+## Compiling interpreter
+
+1. Compile Nit (refer to http://nitlanguage.org/)
+2. Compile the interpreter with nitg : `$PATH_TO_NIT_DIR/bin/nitg minilang_interpreter.nit`
+3. Execute a small script `./minilang_interpreter -e "def foobar(int a) { return a*a; } print(foobar(10));"`
+
+## Compiling compiler
+
+1. Compile Nit (refer to http://nitlanguage.org/)
+2. Compile the interpreter with nitg : `$PATH_TO_NIT_DIR/bin/nitg minilang.nit`
+3. Compile a small script to Python `./minilang_interpreter -e "def foobar(int a) { return a*a; } print(foobar(10));"`
+
+
