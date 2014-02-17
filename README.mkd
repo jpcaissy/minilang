@@ -10,6 +10,5 @@ Minilang is a little programming language developped as part of the INF5000 (com
 
 1. Compile Nit (refer to http://nitlanguage.org/)
 2. Compile the interpreter with nitg : `$PATH_TO_NIT_DIR/bin/nitg minilang.nit`
-3. Compile a small script to Python `./minilang_interpreter -e "def foobar(int a) { return a*a; } print(foobar(10));"`
-
-
+3. Compile a small script to Python `./minilang  -e 'print("Hello World!")'`
+4. Execute the python script: `python out.py`

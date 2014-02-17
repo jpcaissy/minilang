@@ -9,7 +9,7 @@ class Compiler
 	var writer : OStream
 	var level = 0
 	init do
-		writer = new OFStream.open("test.py")
+		writer = new OFStream.open("out.py")
 	end
 	redef fun visit(n) do n.accept_compiler(self)
 end
@@ -215,8 +215,8 @@ end
 redef class Nstmt_assign
 	redef fun accept_compiler(v) do
 		indent(v)
-		v.writer.write("var_{n_left.text} = ")
-		v.enter_visit(n_right)
+		v.writer.write("var_{n_id.text} = ")
+		v.enter_visit(n_expr)
 		v.writer.write("\n")
 	end
 end
@@ -268,10 +268,16 @@ end
 redef class Nstmt_call
 	redef fun accept_compiler(v) do
 		indent(v)
-		v.writer.write("fun_{n_id.text}(")
+		v.enter_visit(n_call)
+	end
+end
+
+redef class Ncall
+	redef fun accept_compiler(v) do
 		if n_arguments != null then
 			v.enter_visit(n_arguments.as(not null))
 		end
+		v.writer.write("fun_{n_id.text}(")
 		v.writer.write(")\n")
 	end
 end
