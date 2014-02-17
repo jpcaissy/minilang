@@ -1,3 +1,5 @@
+Minilang is a little programming language developped as part of the INF5000 (compiler theory) class at UQAM.
+
 ## Compiling interpreter
 
 1. Compile Nit (refer to http://nitlanguage.org/)
